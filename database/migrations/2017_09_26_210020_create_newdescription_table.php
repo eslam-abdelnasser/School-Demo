@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateClinicDescriptionTable extends Migration
+class CreateNewdescriptionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateClinicDescriptionTable extends Migration
      */
     public function up()
     {
-        Schema::create('clinic-description', function (Blueprint $table) {
+        Schema::create('news_description', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
             $table->text('description');
@@ -21,9 +21,9 @@ class CreateClinicDescriptionTable extends Migration
             $table->string('meta_title');
             $table->string('meta_description');
             $table->integer('lang_id')->unsigned();
-            $table->integer('clinic_id')->unsigned();
+            $table->integer('new_id')->unsigned();
             $table->foreign('lang_id')->references('id')->on('languages')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('clinic_id')->references('id')->on('clinics')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('new_id')->references('id')->on('news')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -35,6 +35,6 @@ class CreateClinicDescriptionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clinic-description');
+        Schema::dropIfExists('news_description');
     }
 }

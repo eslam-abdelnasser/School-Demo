@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMedicalEquipmentDescriptionTable extends Migration
+class CreateLaboratorydescriptionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateMedicalEquipmentDescriptionTable extends Migration
      */
     public function up()
     {
-        Schema::create('medical_equipment_descriptions', function (Blueprint $table) {
+        Schema::create('laboratory_description', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
             $table->text('description');
@@ -21,9 +21,9 @@ class CreateMedicalEquipmentDescriptionTable extends Migration
             $table->string('meta_title');
             $table->string('meta_description');
             $table->integer('lang_id')->unsigned();
-            $table->integer('medical_equipment_id')->unsigned();
+            $table->integer('laboratory_id')->unsigned();
             $table->foreign('lang_id')->references('id')->on('languages')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('medical_equipment_id')->references('id')->on('medical_equipments')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('laboratory_id')->references('id')->on('laboratories')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -35,6 +35,6 @@ class CreateMedicalEquipmentDescriptionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('medical_equipment_descriptions');
+        Schema::dropIfExists('laboratory_description');
     }
 }

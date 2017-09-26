@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMedicalEquipmentTable extends Migration
+class CreateTeacherTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateMedicalEquipmentTable extends Migration
      */
     public function up()
     {
-        Schema::create('medical_equipments', function (Blueprint $table) {
+        Schema::create('teachers', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum('home_page_status',[0,1])->nullable();
             $table->enum('status',[0,1]);
             $table->string('image_url')->nullable();
+            $table->integer('subject_id')->index()->unsigned()->defualt(0);
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateMedicalEquipmentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('medical_equipments');
+        Schema::dropIfExists('teachers');
     }
 }

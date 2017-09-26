@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title', trans('admin/doctor.doctor'))
+@section('title', trans('admin/blog.blog'))
 
 {{-- start css --}}
 @section('css')
@@ -12,10 +12,11 @@
 {{-- Start Breadcums --}}
 
 @section('home',trans('admin/admins/index.home'))
-@section('page_title',trans('admin/doctor.doctor'))
+@section('page_title',trans('admin/blog.blog'))
 
 
 {{-- End Breadcums--}}
+
 
 @section('content')
 
@@ -25,7 +26,7 @@
             <div class="portlet box blue">
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-gift"></i>{{trans('admin/doctor.edit_doctor')}} </div>
+                        <i class="fa fa-gift"></i>{{trans('admin/blog.add_new')}} </div>
                     <div class="tools">
                         <a href="javascript:;" class="collapse"> </a>
                         <a href="#portlet-config" data-toggle="modal" class="config"> </a>
@@ -46,54 +47,82 @@
                             </ul>
                         </div>
                         <div class="col-md-9 col-sm-9 col-xs-9">
-                            {{Form::open(['route' => ['doctors.update',$doctor->id] , 'method' => 'put','files'=>true]) }}
+                            {{Form::open(['route' => ['activities.store'] , 'method' => 'post','files'=>true]) }}
                             <div class="tab-content">
-                                @foreach($doctor->description as $description)
-                                    <div class="tab-pane {{$loop->iteration == 1 ? 'active' : ''}}" id="{{$description->language->name}}">
+
+                                @foreach($languages as $language)
+                                    <div class="tab-pane {{$loop->iteration == 1 ? 'active' : ''}}" id="{{$language->name}}">
                                         <div class="portlet-body form">
+
+
+                                            <div class="form-body">
+
                                             <div class="form-body">
                                                 <div class="form-group">
-                                                    <label>  {{trans('admin/doctor.name')}} {{trans('admin/services.'.$description->language->name )}} </label>
+                                                    <label> {{trans('admin/services.title')}} {{trans('admin/services.'.$language->name )}} </label>
                                                     <div class="input-group">
                                                         <span class="input-group-addon input-circle-left">
                                                             <i class="fa fa-align-justify"></i>
                                                         </span>
-                                                        <input type="text" name="name_{{$description->language->label}}" value="{{$description->name}}" id="name_{{$description->language->label}}" class="form-control input-circle-right" placeholder="{{trans('admin/doctor.name')}}"> </div>
+                                                        <input type="text" name="title_{{$language->label}}" value="{{old('title_'.$language->label)}}" id="title_{{$language->label}}" class="form-control input-circle-right" placeholder="{{trans('admin/services.title')}} "> </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>  {{trans('admin/doctor.title')}} {{trans('admin/services.'.$description->language->name )}} </label>
+                                                    <label> {{trans('admin/services.slug')}} {{trans('admin/services.'.$language->name )}} </label>
                                                     <div class="input-group">
                                                         <span class="input-group-addon input-circle-left">
                                                             <i class="fa fa-align-justify"></i>
                                                         </span>
-                                                        <input type="text" name="job_title_{{$description->language->label}}" value="{{$description->job_title}}" id="job_title_{{$description->language->label}}" class="form-control input-circle-right" placeholder="{{trans('admin/doctor.job_title')}}"> </div>
+                                                        <input type="text" name="slug_{{$language->label}}" value="{{old('slug_'.$language->label)}}" id="slug_{{$language->label}}" class="form-control input-circle-right" placeholder="{{trans('admin/services.slug')}} "> </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label> {{trans('admin/services.description')}} {{trans('admin/services.'.$language->name )}} </label>
+                                                    <div class="input-group">
+
+                                                <textarea class="my-editor" name="description_{{$language->label}}" id="description_{{$language->label}}" placeholder="Description">
+                                                     {{old('description_'.$language->label)}}
+                                                </textarea>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label> {{trans('admin/services.meta_title')}} {{trans('admin/services.'.$language->name )}} </label>
+                                                    <div class="input-group">
+  <span class="input-group-addon input-circle-left">
+                                                            <i class="fa fa-align-justify"></i>
+                                                        </span>
+                                                            <input type="text" name="meta_title_{{$language->label}}" value="{{old('meta_title_'.$language->label)}}" id="meta_title_{{$language->label}}" class="form-control input-circle-right" placeholder="{{trans('admin/services.meta_title')}}"> </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label> {{trans('admin/services.meta_description')}} {{trans('admin/services.'.$language->name )}}</label>
+
+                                                    <div class="input-group">
+<span class="input-group-addon input-circle-left">
+                                                            <i class="fa fa-align-justify"></i>
+                                                        </span>
+                                                        <input type="text" name="meta_description_{{$language->label}}" value="{{old('meta_description_'.$language->label)}}" id="meta_description_{{$language->label}}" class="form-control input-circle-right" placeholder="{{trans('admin/services.meta_description')}}"> </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        </div>
                                     </div>
-
                                 @endforeach
                             </div>
 
                             <div class="portlet light ">
 
-
                                 <div class="form-group">
-                                    <label>{{trans('admin/doctor.select_clinic')}}</label>
+                                    <label>{{trans('admin/services.service_home_page_status')}}</label>
                                     <div class="input-group margin-top-10">
-                                        <select class="form-control input-medium" name="clinic_id">
-                                            @foreach($clinics as $clinic)
-                                                @foreach($clinic->description as $description)
-                                                    @if($description->language->label  == LaravelLocalization::getCurrentLocale() )
-                                                        <option value="{{$clinic->id}}" {{$clinic->id == $doctor->clinic_id ? 'selected' : ''}} >{{$description->title}}</option>
-                                                    @endif
-                                            @endforeach
-                                            @endforeach
+                                        <select class="form-control input-medium" name="homepage_status">
+
+                                            <option value="1" {{old('homepage_status') == 1 ? 'selected' : ''}} >{{trans('admin/services.display')}}</option>
+                                            <option value="0" {{old('homepage_status') == 0 ? 'selected' : ''}}>{{trans('admin/services.not_display')}}</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label>{{trans('admin/doctor.clinic_status')}}</label>
+                                    <label>{{trans('admin/services.service_status')}}</label>
                                     <div class="input-group margin-top-10">
                                         <select class="form-control input-medium" name="status">
 
@@ -108,10 +137,10 @@
                                     <div class="col-md-9">
                                         <div class="fileinput fileinput-new" data-provides="fileinput">
                                             <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                                                <img src="{{asset('uploads/doctors/'.$doctor->image_url)}}" alt="" /> </div>
+                                                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" /> </div>
                                             <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div>
                                             <div>
-                                                                <span class="btn default btn-file">
+                                            <span class="btn default btn-file">
                                             <span class="fileinput-new"> {{trans('admin/services.select_image')}} </span>
                                             <span class="fileinput-exists"> {{trans('admin/services.change')}} </span>
                                             <input type="file" name="image_url"> </span>
@@ -142,7 +171,18 @@
 
 {{-- Start javascript --}}
 @section('js')
+
     <script src="{{asset('admin-panel/'.LaravelLocalization::getCurrentLocale().'/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js')}}" type="text/javascript"></script>
+
+    <script>
+        @foreach($languages as $language)
+          $("#title_{{$language->label}}").on('change', function (e) {
+
+            $("#slug_{{$language->label}}").val($("#title_{{$language->label}}").val());
+        });
+
+        @endforeach
+    </script>
 @endsection
 
 {{-- end javascript --}}

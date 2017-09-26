@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title', trans('admin/medical_equipment.medical_equipment'))
+@section('title', trans('admin/blog.blog'))
 
 {{-- start css --}}
 @section('css')
@@ -19,8 +19,8 @@
 
 {{-- Start Breadcums --}}
 
-@section('home','Home')
-@section('page_title',trans('admin/medical_equipment.medical_equipment'))
+@section('home',trans('admin/admins/index.home'))
+@section('page_title',trans('admin/blog.blog'))
 
 
 {{-- End Breadcums--}}
@@ -36,7 +36,7 @@
                 <div class="portlet-title">
                     <div class="caption font-dark">
                         <i class="icon-settings font-dark"></i>
-                        <span class="caption-subject bold uppercase"> {{trans('admin/medical_equipment.table')}}</span>
+                        <span class="caption-subject bold uppercase"> {{trans('admin/blog.blog_table')}}</span>
                     </div>
 
                 </div>
@@ -45,7 +45,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="btn-group">
-                                    <button id="sample_editable_1_new" onclick="location.href ='{{route('medical_equipments.create')}}'" class="btn sbold green"> {{trans('admin/medical_equipment.add_new')}}
+                                    <button id="sample_editable_1_new" onclick="location.href ='{{route('activities.create')}}'" class="btn sbold green"> {{trans('admin/blog.add_new')}}
                                         <i class="fa fa-plus"></i>
                                     </button>
 
@@ -59,7 +59,7 @@
 
                         </div>
                     </div>
-                    {!! Form::open(['route' => ['medical_equipments.destroy.all'] , 'method' => 'delete', 'id'=>'form-delete']) !!}
+                    {!! Form::open(['route' => ['activities.destroy.all'] , 'method' => 'delete', 'id'=>'form-delete']) !!}
                     <input type="hidden"  value="" name="items" id="items"/>
                     {!! Form::close() !!}
                     <table class="table table-striped table-bordered table-hover table-checkable order-column" id="sample_1">
@@ -72,44 +72,45 @@
                                 </label>
                             </th>
                             <th>#</th>
-                            <th class="text-center"> {{trans('admin/medical_equipment.title')}} </th>
+                            <th class="text-center"> {{trans('admin/blog.blog_title')}} </th>
                             <th class="text-center"> {{trans('admin/services.show_on_home_page')}} </th>
                             <th class="text-center"> {{trans('admin/services.status')}} </th>
 
-                            <th class="text-center"> {{trans('admin/services.action')}} </th>
+                                <th class="text-center"> {{trans('admin/services.action')}} </th>
                         </tr>
                         </thead>
                         <tbody>
 
-                        @foreach($medical_equipments as $medical_equipment)
+                        @foreach($activities as $activity)
                             <tr class="odd gradeX">
                                 <td>
                                     <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                        <input type="checkbox" name="checkbox[]" class="checkboxes sub_chk" value="{{$medical_equipment->id}}" data-id="{{$medical_equipment->id}}" />
+                                        <input type="checkbox" name="checkbox[]" class="checkboxes sub_chk" value="{{$activity->id}}" data-id="{{$activity->id}}" />
                                         <span></span>
                                     </label>
                                 </td>
                                 <td>{{$loop->iteration}}</td>
                                 <td class="text-center">
-                                    @foreach($medical_equipment->description as $description)
+                                    @foreach($activity->description as $description)
 
                                         <div><a href="#"> {{$description->title}} </a></div>
 
                                     @endforeach
                                 </td>
                                 <td class="text-center vcenter">
-                                    <span class="label label-sm label-{{$medical_equipment->home_page_status == 0 ? 'danger' : 'success'}}"> {{$medical_equipment->home_page_status == 0 ? 'inactive' : 'active'}} </span>
+                                    <span class="label label-sm label-{{$activity->home_page_status == 0 ? 'danger' : 'success'}}"> {{$activity->home_page_status == 0 ? 'inactive' : 'active'}} </span>
 
                                 </td>
                                 <td class="text-center">
-                                    <span class="label label-sm label-{{$medical_equipment->status == 0 ? 'danger' : 'success'}}"> {{$medical_equipment->status == 0 ? 'inactive' : 'active'}} </span>
+                                    <span class="label label-sm label-{{$activity->status == 0 ? 'danger' : 'success'}}"> {{$activity->status == 0 ? 'inactive' : 'active'}} </span>
                                 </td>
                                 <td class="text-center vcenter">
-                                    <a href="{{route('medical_equipments.edit',$medical_equipment->id)}}" title="{{trans('admin/services.edit')}}"><i class="fa fa-edit"></i></a>
-                                    {!! Form::open(['route' => ['medical_equipments.destroy',$medical_equipment->id] , 'method' => 'delete','style'=>'display: inline','id'=>'Form'.$medical_equipment->id]) !!}
-                                    <a href="javascript:{}" onclick='document.getElementById("Form{{$medical_equipment->id}}" ).submit();' title="{{trans('admin/services.delete')}}"><i class="fa fa-trash"></i></a>
+                                    <a href="{{route('activities.edit',$activity->id)}}" title="{{trans('admin/services.edit')}}"><i class="fa fa-edit"></i></a>
+                                    {!! Form::open(['route' => ['activities.destroy',$activity->id] , 'method' => 'delete','style'=>'display: inline','id'=>'Form'.$activity->id]) !!}
+                                    <a href="javascript:{}" onclick='document.getElementById("Form{{$activity->id}}" ).submit();' title="{{trans('admin/services.delete')}}"><i class="fa fa-trash"></i></a>
                                     {!! Form::close() !!}
                                 </td>
+
                             </tr>
                         @endforeach
                         </tbody>

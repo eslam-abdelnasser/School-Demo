@@ -4,11 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Clinic extends Model
+class Activity extends Model
 {
     //
     public function description(){
 
-        return $this->hasMany('App\Models\ClinicDescription','clinic_id');
+        return $this->hasMany('App\Models\ActivityDescription','activity_id');
     }
 }

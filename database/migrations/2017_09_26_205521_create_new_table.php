@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateClinicsTable extends Migration
+class CreateNewTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateClinicsTable extends Migration
      */
     public function up()
     {
-        Schema::create('clinics', function (Blueprint $table) {
+        Schema::create('news', function (Blueprint $table) {
             $table->increments('id');
+            $table->enum('home_page_status',[0,1])->nullable();
             $table->enum('status',[0,1]);
             $table->string('image_url')->nullable();
-            $table->enum('home_page_status',[0,1])->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateClinicsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clinics');
+        Schema::dropIfExists('news');
     }
 }

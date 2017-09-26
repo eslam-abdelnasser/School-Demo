@@ -4,11 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ClinicDescription extends Model
+class NewDescription extends Model
 {
     //
-    protected $table = 'clinic-description';
-
+    protected $table = 'news_description';
 
 
     public function language(){
@@ -16,5 +15,8 @@ class ClinicDescription extends Model
         return $this->belongsTo('App\Models\Language','lang_id');
     }
 
+    public function news(){
+        return $this->belongsTO('App\Models\News','new_id');
+    }
 
 }

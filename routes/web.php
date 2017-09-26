@@ -33,8 +33,12 @@ Route::group([
     Route::resource('/roles','Admin\RoleController');
     Route::resource('/languages','Admin\LanguagesController');
     Route::resource('/services','Admin\ServiceController');
-    Route::resource('/clinics','Admin\ClinicController');
-    Route::resource('/doctors','Admin\DoctorController');
+
+    Route::resource('/teachers','Admin\TeacherController');
+    Route::resource('/news','Admin\NewController');
+    Route::resource('/laboratories','Admin\LaboratoryController');
+    Route::resource('/activities','Admin\ActivityController');
+
     Route::resource('/galleries','Admin\GalleryController');
     Route::resource('/slider' , 'Admin\SliderController');
     Route::resource('/faqs','Admin\FaqController');
@@ -42,8 +46,12 @@ Route::group([
 
     Route::delete('/socials','Admin\SocialController@destroyAll')->name('socials.destroy.all');
     Route::delete('/services','Admin\ServiceController@destroyAll')->name('services.destroy.all');
-    Route::delete('/clinics','Admin\ClinicController@destroyAll')->name('clinics.destroy.all');
-    Route::delete('/doctors','Admin\DoctorController@destroyAll')->name('doctors.destroy.all');
+
+    Route::delete('/teachers','Admin\TeacherController@destroyAll')->name('teachers.destroy.all');
+    Route::delete('/news','Admin\NewController@destroyAll')->name('news.destroy.all');
+    Route::delete('/laboratories','Admin\LaboratoryController@destroyAll')->name('laboratories.destroy.all');
+    Route::delete('/activities','Admin\ActivityController@destroyAll')->name('activities.destroy.all');
+
     Route::delete('/galleries','Admin\GalleryController@destroyAll')->name('galleries.destroy.all');
     Route::resource('/sliders' , 'Admin\SliderController');
     Route::get('/Album/{id}/create','Admin\GalleryController@addMedia')->name('Album.create');
@@ -53,8 +61,6 @@ Route::group([
     Route::resource('/faqs','Admin\FaqController');
     Route::resource('/blogs','Admin\BlogController');
     Route::delete('/blogs','Admin\BlogController@destroyAll')->name('blogs.destroy.all');
-    Route::resource('/medical_equipments','Admin\MedicalEquipmentController');
-    Route::delete('/medical_equipments','Admin\MedicalEquipmentController@destroyAll')->name('medical_equipments.destroy.all');
     Route::resource('/careers','Admin\CareerController');
     Route::delete('/careers','Admin\CareerController@destroyAll')->name('careers.destroy.all');
 

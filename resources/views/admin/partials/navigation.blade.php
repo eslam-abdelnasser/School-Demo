@@ -152,16 +152,6 @@
 
 
             <li class="nav-item start">
-                <a href="{{route('admin.general.setting')}}" class="nav-link nav-toggle">
-                    <i class="icon-puzzle"></i>
-                    <span class="title"> Website General setting</span>
-
-
-                </a>
-
-            </li>
-
-            <li class="nav-item start">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-home"></i>
                     <span class="title">{{trans('admin/partials/navigation.slider_show')}}</span>
@@ -335,29 +325,29 @@
 
 
             <li class="heading">
-                <h3 class="uppercase">{{trans('admin/partials/navigation.clinics')}}</h3>
+                <h3 class="uppercase">School</h3>
             </li>
 
             <li class="nav-item start">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-home"></i>
-                    <span class="title">{{trans('admin/partials/navigation.doctors')}}</span>
+                    <span class="title">Teacher</span>
                     <span class="selected"></span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item start">
-                        <a href="{{route('doctors.index')}}" class="nav-link ">
+                        <a href="{{route('teachers.index')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
-                            <span class="title">{{trans('admin/partials/navigation.doctors')}}</span>
+                            <span class="title">Teacher</span>
                             <span class="selected"></span>
                         </a>
                     </li>
 
                     <li class="nav-item start">
-                        <a href="{{route('doctors.create')}}" class="nav-link ">
+                        <a href="{{route('teachers.create')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
-                            <span class="title">{{trans('admin/partials/navigation.create_new_doctor')}}</span>
+                            <span class="title">Add New Teacher</span>
                             <span class="selected"></span>
                         </a>
                     </li>
@@ -369,23 +359,23 @@
             <li class="nav-item start">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-home"></i>
-                    <span class="title">{{trans('admin/partials/navigation.clinic')}}</span>
+                    <span class="title">Laboratories</span>
                     <span class="selected"></span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item start">
-                        <a href="{{route('clinics.index')}}" class="nav-link ">
+                        <a href="{{route('laboratories.index')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
-                            <span class="title">{{trans('admin/partials/navigation.clinic')}}</span>
+                            <span class="title">Laboratories</span>
                             <span class="selected"></span>
                         </a>
                     </li>
 
                     <li class="nav-item start">
-                        <a href="{{route('clinics.create')}}" class="nav-link ">
+                        <a href="{{route('laboratories.create')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
-                            <span class="title">{{trans('admin/partials/navigation.create_new_clinic')}}</span>
+                            <span class="title">Add New Laboratory</span>
                             <span class="selected"></span>
                         </a>
                     </li>
@@ -395,28 +385,57 @@
             <li class="nav-item start">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-home"></i>
-                    <span class="title">{{trans('admin/partials/navigation.medical_equipments')}}</span>
+                    <span class="title">News</span>
                     <span class="selected"></span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item start">
-                        <a href="{{route('medical_equipments.index')}}" class="nav-link ">
+                        <a href="{{route('news.index')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
-                            <span class="title">{{trans('admin/partials/navigation.medical_equipments')}}</span>
+                            <span class="title">News</span>
                             <span class="selected"></span>
                         </a>
                     </li>
 
                     <li class="nav-item start">
-                        <a href="{{route('medical_equipments.create')}}" class="nav-link ">
+                        <a href="{{route('news.create')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
-                            <span class="title">{{trans('admin/partials/navigation.create_new_medical_equipment')}}</span>
+                            <span class="title">Add News</span>
                             <span class="selected"></span>
                         </a>
                     </li>
                 </ul>
             </li>
+
+
+
+            <li class="nav-item start">
+                <a href="javascript:;" class="nav-link nav-toggle">
+                    <i class="icon-home"></i>
+                    <span class="title">Activity</span>
+                    <span class="selected"></span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item start">
+                        <a href="{{route('activities.index')}}" class="nav-link ">
+                            <i class="icon-bar-chart"></i>
+                            <span class="title">Activities</span>
+                            <span class="selected"></span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item start">
+                        <a href="{{route('activities.create')}}" class="nav-link ">
+                            <i class="icon-bar-chart"></i>
+                            <span class="title">Add New Activity</span>
+                            <span class="selected"></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
 
 
 
