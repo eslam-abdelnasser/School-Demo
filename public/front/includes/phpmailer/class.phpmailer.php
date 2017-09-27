@@ -432,7 +432,7 @@ class PHPMailer
      *   string  $to            email address of the recipient
      *   string  $cc            cc email addresses
      *   string  $bcc           bcc email addresses
-     *   string  $subject       the subject
+     *   string  $subjects       the subjects
      *   string  $body          the email body
      *   string  $from          email address of sender
      * @var string
@@ -1967,7 +1967,7 @@ class PHPMailer
             $result .= $this->addrAppend('Reply-To', $this->ReplyTo);
         }
 
-        // mail() sets the subject itself
+        // mail() sets the subjects itself
         if ($this->Mailer != 'mail') {
             $result .= $this->headerLine('Subject', $this->encodeHeader($this->secureHeader($this->Subject)));
         }

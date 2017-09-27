@@ -74,12 +74,12 @@
                         </li>
                         <li><a href='{{route('blog')}}'>Blog</a></li>
 
-                        <li><a href='{{route('clinics')}}'>laboratories</a></li>
+                        <li><a href='{{route('laboratories')}}'>laboratories</a></li>
 
-                        <li><a href='{{route('doctors')}}'>Teachers</a></li>
+                        <li><a href='{{route('teachers')}}'>Teachers</a></li>
 
-                        <li><a href='{{route('medical-equipment')}}'>News</a></li>
-                        <li><a href='{{route('medical-equipment')}}'>Our activities</a></li>
+                        <li><a href='{{route('news')}}'>News</a></li>
+                        <li><a href='{{route('activities')}}'>Our activities</a></li>
                         <li><a href='{{route('media')}}'>Media</a></li>
 
 

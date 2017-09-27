@@ -41,4 +41,14 @@ return [
     'website_general_settings' => 'الخصائص العامه لللموقع',
     'about_us' => 'معلومات عنا',
     'slider_show' => 'شريط التمرير',
+    'teacher' => 'المدرسين',
+    'laboratory' => 'المعامل',
+    'news' => 'الأخبار',
+    'activity' => 'الأنشطه',
+    'add_new_teacher' => 'إظافه مدرس',
+    'add_new_laboratory' => 'إضافه معمل',
+    'add_new_news' => 'إضافه خبر',
+    'add_new_activity' => 'إضافه نشاط',
+    'my_school' => 'مدرستى'
+
 ];

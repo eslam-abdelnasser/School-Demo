@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title', trans('admin/blog.blog'))
+@section('title', trans('admin/school.activity'))
 
 {{-- start css --}}
 @section('css')
@@ -20,7 +20,7 @@
 {{-- Start Breadcums --}}
 
 @section('home',trans('admin/admins/index.home'))
-@section('page_title',trans('admin/blog.blog'))
+@section('page_title',trans('admin/school.activity'))
 
 
 {{-- End Breadcums--}}
@@ -36,7 +36,7 @@
                 <div class="portlet-title">
                     <div class="caption font-dark">
                         <i class="icon-settings font-dark"></i>
-                        <span class="caption-subject bold uppercase"> {{trans('admin/blog.blog_table')}}</span>
+                        <span class="caption-subject bold uppercase"> {{trans('admin/school.activity_table')}}</span>
                     </div>
 
                 </div>
@@ -45,7 +45,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="btn-group">
-                                    <button id="sample_editable_1_new" onclick="location.href ='{{route('activities.create')}}'" class="btn sbold green"> {{trans('admin/blog.add_new')}}
+                                    <button id="sample_editable_1_new" onclick="location.href ='{{route('activities.create')}}'" class="btn sbold green"> {{trans('admin/school.add_new_activity')}}
                                         <i class="fa fa-plus"></i>
                                     </button>
 
@@ -72,7 +72,7 @@
                                 </label>
                             </th>
                             <th>#</th>
-                            <th class="text-center"> {{trans('admin/blog.blog_title')}} </th>
+                            <th class="text-center"> {{trans('admin/school.activity_title')}} </th>
                             <th class="text-center"> {{trans('admin/services.show_on_home_page')}} </th>
                             <th class="text-center"> {{trans('admin/services.status')}} </th>
 

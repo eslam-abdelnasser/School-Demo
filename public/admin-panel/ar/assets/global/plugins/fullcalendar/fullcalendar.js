@@ -2573,10 +2573,10 @@ var CellDragListener = DragListener.extend({
 
 			this.origCell = this.getCell(point.left, point.top);
 
-			// treat the center of the subject as the collision point?
+			// treat the center of the subjects as the collision point?
 			if (subjectEl && this.options.subjectCenter) {
 
-				// only consider the area the subject overlaps the cell. best for large subjects
+				// only consider the area the subjects overlaps the cell. best for large subjects
 				if (this.origCell) {
 					subjectRect = intersectRects(this.origCell, subjectRect) ||
 						subjectRect; // in case there is no intersection
@@ -10277,7 +10277,7 @@ function EventManager(options) { // assumed to be a calendar
 					if (peerOverlap === false) {
 						return false;
 					}
-					// if the peer event's overlap is a test function, pass the subject event as the first param
+					// if the peer event's overlap is a test function, pass the subjects event as the first param
 					if (typeof peerOverlap === 'function' && !peerOverlap(event, peerEvent)) {
 						return false;
 					}

@@ -2554,7 +2554,7 @@ var CORE_PROPS = [
     ["dc:description", "Comments"],
     ["dc:identifier", "Identifier"],
     ["dc:language", "Language"],
-    ["dc:subject", "Subject"],
+    ["dc:subjects", "Subject"],
     ["dc:title", "Title"],
     ["dcterms:created", "CreatedDate", 'date'],
     ["dcterms:modified", "ModifiedDate", 'date']

@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title', trans('admin/blog.blog'))
+@section('title', trans('admin/school.activity'))
 
 {{-- start css --}}
 @section('css')
@@ -12,7 +12,7 @@
 {{-- Start Breadcums --}}
 
 @section('home',trans('admin/admins/index.home'))
-@section('page_title',trans('admin/blog.blog'))
+@section('page_title',trans('admin/school.activity'))
 
 
 {{-- End Breadcums--}}
@@ -26,7 +26,7 @@
             <div class="portlet box blue">
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-gift"></i>{{trans('admin/blog.add_new')}} </div>
+                        <i class="fa fa-gift"></i>{{trans('admin/school.add_new_activity')}} </div>
                     <div class="tools">
                         <a href="javascript:;" class="collapse"> </a>
                         <a href="#portlet-config" data-toggle="modal" class="config"> </a>

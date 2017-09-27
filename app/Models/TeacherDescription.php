@@ -7,8 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class TeacherDescription extends Model
 {
     //
-    protected $table = 'teacher_description';
+    protected $table = 'teachers_description';
 
+    public function teacher(){
+        return $this->belongsTO('App\Models\Teacher','teacher_id');
+    }
 
 
     public function language(){

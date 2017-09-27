@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title', trans('admin/blog.blog'))
+@section('title', trans('admin/school.activity'))
 
 {{-- start css --}}
 @section('css')
@@ -12,7 +12,7 @@
 {{-- Start Breadcums --}}
 
 @section('home',trans('admin/admins/index.home'))
-@section('page_title',trans('admin/blog.blog'))
+@section('page_title',trans('admin/school.activity'))
 
 
 {{-- End Breadcums--}}
@@ -27,7 +27,7 @@
             <div class="portlet box blue">
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-gift"></i>{{trans('admin/blog.edit_blog')}} </div>
+                        <i class="fa fa-gift"></i>{{trans('admin/school.edit_activity')}} </div>
                     <div class="tools">
                         <a href="javascript:;" class="collapse"> </a>
                         <a href="#portlet-config" data-toggle="modal" class="config"> </a>
@@ -142,7 +142,7 @@
                                     <div class="col-md-9">
                                         <div class="fileinput fileinput-new" data-provides="fileinput">
                                             <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                                                <img src="{{asset('uploads/activities/'.$activity->image_url)}}" alt="" /> </div>
+                                                <img src="{{asset('uploads/activities/540x370/'.$activity->image_url)}}" alt="" /> </div>
                                             <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div>
                                             <div>
                                                                 <span class="btn default btn-file">

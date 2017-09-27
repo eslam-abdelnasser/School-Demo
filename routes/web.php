@@ -39,6 +39,7 @@ Route::group([
     Route::resource('/laboratories','Admin\LaboratoryController');
     Route::resource('/activities','Admin\ActivityController');
 
+
     Route::resource('/galleries','Admin\GalleryController');
     Route::resource('/slider' , 'Admin\SliderController');
     Route::resource('/faqs','Admin\FaqController');
@@ -123,21 +124,28 @@ Route::group([
 
     Route::get('/about-us', 'AboutUsController@index')->name('about-us');
     Route::get('/blog', 'ListController@blog')->name('blog');
-    Route::get('/clinics', 'ListController@clinic')->name('clinics');
-    Route::get('/doctors', 'ListController@doctor')->name('doctors');
-    Route::get('/medical-equipment', 'ListController@equipment')->name('medical-equipment');
     Route::get('/media', 'AboutUsController@media')->name('media');
     Route::get('/careers', 'ListController@career')->name('careers');
     Route::get('/contact-us', 'ContactUsController@index')->name('contact-us');
+
+    Route::get('/teachers', 'ListController@teacher')->name('teachers');
+    Route::get('/news', 'ListController@news')->name('news');
+    Route::get('/laboratories', 'ListController@laboratory')->name('laboratories');
+    Route::get('/activities', 'ListController@activity')->name('activities');
+
 
 
 
     // details of list
     Route::get('/blog/{slug}/details', 'DetailsController@blog')->name('blog.details');
-    Route::get('/clinics/{slug}/details', 'DetailsController@clinic')->name('clinics.details');
-    Route::get('/doctors/{slug}/details', 'DetailsController@doctor')->name('doctors.details');
-    Route::get('/medical-equipment/{slug}/details', 'DetailsController@equipment')->name('medical-equipment.details');
     Route::get('/careers/{slug}/details', 'DetailsController@career')->name('careers.details');
+
+    Route::get('/teachers/{slug}/details', 'DetailsController@teacher')->name('teachers.details');
+    Route::get('/news/{slug}/details', 'DetailsController@news')->name('news.details');
+    Route::get('/laboratories/{slug}/details', 'DetailsController@laboratory')->name('laboratories.details');
+    Route::get('/activities/{slug}/details', 'DetailsController@activity')->name('activities.details');
+
+
 
 
 }) ;

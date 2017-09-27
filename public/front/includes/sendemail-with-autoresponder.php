@@ -17,11 +17,11 @@ $mail->Port = 465;                                    // TCP port to connect to
 
 
 if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
-    if( $_POST['contact-form-name'] != '' AND $_POST['contact-form-email'] != '' AND $_POST['contact-form-subject'] != '' ) {
+    if( $_POST['contact-form-name'] != '' AND $_POST['contact-form-email'] != '' AND $_POST['contact-form-subjects'] != '' ) {
 
         $name = $_POST['contact-form-name'];
         $email = $_POST['contact-form-email'];
-        $subject = $_POST['contact-form-subject'];
+        $subject = $_POST['contact-form-subjects'];
         $phone = $_POST['contact-form-phone'];
         $message = $_POST['contact-form-message'];
 

@@ -325,13 +325,13 @@
 
 
             <li class="heading">
-                <h3 class="uppercase">School</h3>
+                <h3 class="uppercase">{{trans('admin/partials/navigation.my_school')}}</h3>
             </li>
 
             <li class="nav-item start">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-home"></i>
-                    <span class="title">Teacher</span>
+                    <span class="title">{{trans('admin/partials/navigation.teacher')}}</span>
                     <span class="selected"></span>
                     <span class="arrow"></span>
                 </a>
@@ -339,7 +339,7 @@
                     <li class="nav-item start">
                         <a href="{{route('teachers.index')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
-                            <span class="title">Teacher</span>
+                            <span class="title">{{trans('admin/partials/navigation.teacher')}}</span>
                             <span class="selected"></span>
                         </a>
                     </li>
@@ -347,7 +347,7 @@
                     <li class="nav-item start">
                         <a href="{{route('teachers.create')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
-                            <span class="title">Add New Teacher</span>
+                            <span class="title">{{trans('admin/partials/navigation.add_new_teacher')}}</span>
                             <span class="selected"></span>
                         </a>
                     </li>
@@ -355,11 +355,10 @@
             </li>
 
 
-
             <li class="nav-item start">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-home"></i>
-                    <span class="title">Laboratories</span>
+                    <span class="title">{{trans('admin/partials/navigation.laboratory')}}</span>
                     <span class="selected"></span>
                     <span class="arrow"></span>
                 </a>
@@ -367,7 +366,7 @@
                     <li class="nav-item start">
                         <a href="{{route('laboratories.index')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
-                            <span class="title">Laboratories</span>
+                            <span class="title">{{trans('admin/partials/navigation.laboratory')}}</span>
                             <span class="selected"></span>
                         </a>
                     </li>
@@ -375,7 +374,7 @@
                     <li class="nav-item start">
                         <a href="{{route('laboratories.create')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
-                            <span class="title">Add New Laboratory</span>
+                            <span class="title">{{trans('admin/partials/navigation.add_new_laboratory')}}</span>
                             <span class="selected"></span>
                         </a>
                     </li>
@@ -385,7 +384,7 @@
             <li class="nav-item start">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-home"></i>
-                    <span class="title">News</span>
+                    <span class="title">{{trans('admin/partials/navigation.news')}}</span>
                     <span class="selected"></span>
                     <span class="arrow"></span>
                 </a>
@@ -393,7 +392,7 @@
                     <li class="nav-item start">
                         <a href="{{route('news.index')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
-                            <span class="title">News</span>
+                            <span class="title">{{trans('admin/partials/navigation.news')}}</span>
                             <span class="selected"></span>
                         </a>
                     </li>
@@ -401,7 +400,7 @@
                     <li class="nav-item start">
                         <a href="{{route('news.create')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
-                            <span class="title">Add News</span>
+                            <span class="title">{{trans('admin/partials/navigation.add_new_news')}}</span>
                             <span class="selected"></span>
                         </a>
                     </li>
@@ -413,7 +412,7 @@
             <li class="nav-item start">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-home"></i>
-                    <span class="title">Activity</span>
+                    <span class="title">{{trans('admin/partials/navigation.activity')}}</span>
                     <span class="selected"></span>
                     <span class="arrow"></span>
                 </a>
@@ -421,7 +420,7 @@
                     <li class="nav-item start">
                         <a href="{{route('activities.index')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
-                            <span class="title">Activities</span>
+                            <span class="title">{{trans('admin/partials/navigation.activity')}}</span>
                             <span class="selected"></span>
                         </a>
                     </li>
@@ -429,7 +428,7 @@
                     <li class="nav-item start">
                         <a href="{{route('activities.create')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
-                            <span class="title">Add New Activity</span>
+                            <span class="title">{{trans('admin/partials/navigation.add_new_activity')}}</span>
                             <span class="selected"></span>
                         </a>
                     </li>

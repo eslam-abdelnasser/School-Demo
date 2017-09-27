@@ -42,4 +42,14 @@ return [
     'website_general_settings' => 'Website General Settings',
     'about_us' => 'About us',
     'slider_show' => 'Slider Show',
+    'teacher' => 'Teachers',
+    'laboratory' => 'Laboratories',
+    'news' => 'News',
+    'activity' => 'Activities',
+    'add_new_teacher' => 'Add New Teacher',
+    'add_new_laboratory' => 'Add New Laboratory',
+    'add_new_news' => 'Add New News',
+    'add_new_activity' => 'Add New Activity',
+    'my_school' => 'My School',
+
 ];
