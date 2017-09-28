@@ -49,6 +49,11 @@ return [
     'add_new_laboratory' => 'إضافه معمل',
     'add_new_news' => 'إضافه خبر',
     'add_new_activity' => 'إضافه نشاط',
-    'my_school' => 'مدرستى'
-
+    'my_school' => 'مدرستى',
+    'supervisor' => 'مشرف',
+    'add_new_supervisor' => 'إضافه مشرف جديد',
+    'admission_role' => 'دور القبول',
+    'add_new_admission_role' => 'إضافه دور قبول جديد',
+    'education_level' => 'مستوى التعليم',
+    'add_new_education_level' => 'إضافه مستوى تعليمى',
 ];

@@ -435,6 +435,84 @@
                 </ul>
             </li>
 
+            <li class="nav-item start">
+                <a href="javascript:;" class="nav-link nav-toggle">
+                    <i class="icon-home"></i>
+                    <span class="title">{{trans('admin/partials/navigation.supervisor')}}</span>
+                    <span class="selected"></span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item start">
+                        <a href="{{route('supervisors.index')}}" class="nav-link ">
+                            <i class="icon-bar-chart"></i>
+                            <span class="title">{{trans('admin/partials/navigation.supervisor')}}</span>
+                            <span class="selected"></span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item start">
+                        <a href="{{route('supervisors.create')}}" class="nav-link ">
+                            <i class="icon-bar-chart"></i>
+                            <span class="title">{{trans('admin/partials/navigation.add_new_supervisor')}}</span>
+                            <span class="selected"></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item start">
+                <a href="javascript:;" class="nav-link nav-toggle">
+                    <i class="icon-home"></i>
+                    <span class="title">{{trans('admin/partials/navigation.admission_role')}}</span>
+                    <span class="selected"></span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item start">
+                        <a href="{{route('admission-roles.index')}}" class="nav-link ">
+                            <i class="icon-bar-chart"></i>
+                            <span class="title">{{trans('admin/partials/navigation.admission_role')}}</span>
+                            <span class="selected"></span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item start">
+                        <a href="{{route('admission-roles.create')}}" class="nav-link ">
+                            <i class="icon-bar-chart"></i>
+                            <span class="title">{{trans('admin/partials/navigation.add_new_admission_role')}}</span>
+                            <span class="selected"></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item start">
+                <a href="javascript:;" class="nav-link nav-toggle">
+                    <i class="icon-home"></i>
+                    <span class="title">{{trans('admin/partials/navigation.education_level')}}</span>
+                    <span class="selected"></span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item start">
+                        <a href="{{route('education-levels.index')}}" class="nav-link ">
+                            <i class="icon-bar-chart"></i>
+                            <span class="title">{{trans('admin/partials/navigation.education_level')}}</span>
+                            <span class="selected"></span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item start">
+                        <a href="{{route('education-levels.create')}}" class="nav-link ">
+                            <i class="icon-bar-chart"></i>
+                            <span class="title">{{trans('admin/partials/navigation.add_new_education_level')}}</span>
+                            <span class="selected"></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
 
 
 

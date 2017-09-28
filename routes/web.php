@@ -45,6 +45,17 @@ Route::group([
     Route::resource('/faqs','Admin\FaqController');
     Route::resource('/socials','Admin\SocialController');
 
+
+    Route::resource('/supervisors','Admin\SupervisorController');
+    Route::delete('/supervisors','Admin\SupervisorController@destroyAll')->name('supervisors.destroy.all');
+
+    Route::resource('/education-levels','Admin\educationLevelController');
+    Route::delete('/education-levels','Admin\EducationLevelController@destroyAll')->name('education-levels.destroy.all');
+
+    Route::resource('/admission-roles','Admin\AdmissionRoleController');
+    Route::delete('/admission-roles','Admin\AdmissionRoleController@destroyAll')->name('admission-roles.destroy.all');
+
+
     Route::delete('/socials','Admin\SocialController@destroyAll')->name('socials.destroy.all');
     Route::delete('/services','Admin\ServiceController@destroyAll')->name('services.destroy.all');
 
@@ -59,7 +70,6 @@ Route::group([
     Route::post('/Album/{id}/create','Admin\GalleryController@postMedia')->name('Album.store');
     Route::get('/Album/{id}/show','Admin\GalleryController@showAlbum')->name('Album.show');
     Route::get('/Album/{id}/delete','Admin\GalleryController@delete')->name('Album.delete');
-    Route::resource('/faqs','Admin\FaqController');
     Route::resource('/blogs','Admin\BlogController');
     Route::delete('/blogs','Admin\BlogController@destroyAll')->name('blogs.destroy.all');
     Route::resource('/careers','Admin\CareerController');

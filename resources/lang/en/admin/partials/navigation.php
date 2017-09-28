@@ -52,4 +52,10 @@ return [
     'add_new_activity' => 'Add New Activity',
     'my_school' => 'My School',
 
+    'supervisor' => 'Supervisors',
+    'add_new_supervisor' => 'Add New Supervisors',
+    'admission_role' => 'Admission Role',
+    'add_new_admission_role' => 'Add New Admission Role',
+    'education_level' => 'Education Level',
+    'add_new_education_level' => 'Add New Education Level',
 ];

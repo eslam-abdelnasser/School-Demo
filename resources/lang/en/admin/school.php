@@ -28,5 +28,23 @@ return[
     'edit_teacher' => 'Edit Teacher',
     'edit_news' => 'Edit News',
     'edit_laboratory' => 'Edit Laboratory',
+    'supervisors' => 'Supervisors',
+    'add_new_supervisor' => 'Add New Supervisor',
+    'supervisor_table' => 'Supervisor Table',
+    'edit_supervisor' => 'Edit Supervisor',
+
+    'education_levels' => 'Education Levels',
+    'add_new_education_level' => 'Add New Education Level',
+    'education_level_table' => 'Education Level Table',
+    'edit_education_level' => 'Edit Education Level',
+
+    'admission_roles' => 'Admission Roles',
+    'add_new_admission_role' => 'Add New Admission Role',
+    'admission_role_table' => 'Admission Role Table',
+    'edit_admission_role' => 'Edit Admission Role',
+
+    'title' => 'Title',
+    'description' => 'Description',
+
 
 ];
