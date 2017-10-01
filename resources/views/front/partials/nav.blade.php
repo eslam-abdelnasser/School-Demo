@@ -66,10 +66,9 @@
                             <ul class="dropdown">
                                 <li><a href="{{route('about-us')}}">About</a></li>
                                 <li><a href='{{route('services')}}'>Services</a></li>
-                                <li><a href="#">Education level</a></li>
-                                <li><a href="#">Curriculum</a></li>
-                                <li><a href="#">Supervisor</a></li>
-                                <li><a href="#">Admission roles</a></li>
+                                <li><a href="{{route('education-level')}}">Education level</a></li>
+                                <li><a href="{{route('supervisor')}}">Supervisor</a></li>
+                                <li><a href="{{route('admission-roles')}}">Admission roles</a></li>
                             </ul>
 
                         </li>

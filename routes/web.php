@@ -133,6 +133,11 @@ Route::group([
     });
 
     Route::get('/about-us', 'AboutUsController@index')->name('about-us');
+
+    Route::get('/education-level', 'AboutUsController@educationLevel')->name('education-level');
+    Route::get('/supervisor', 'AboutUsController@supervisor')->name('supervisor');
+    Route::get('/admission-roles', 'AboutUsController@admissionRoles')->name('admission-roles');
+
     Route::get('/blog', 'ListController@blog')->name('blog');
     Route::get('/media', 'AboutUsController@media')->name('media');
     Route::get('/careers', 'ListController@career')->name('careers');

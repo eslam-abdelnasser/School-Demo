@@ -76,7 +76,8 @@ class BlogController extends Controller
         $fileName =  str_random(6).'.'.$file->getClientOriginalExtension();
         $file->move($dir , $fileName);
         // resize image using intervention
-        Image::make($dir . $fileName)->resize(540, 370)->save($dir.'540x370'.$fileName);
+        Image::make($dir . $fileName)->resize(540, 370)->save($dir.'540x370/'.$fileName);
+        Image::make($dir . $fileName)->resize(80, 55)->save($dir.'80x55/'.$fileName);
         $blog->image_url = $fileName ;
         $blog->save();
 
@@ -166,7 +167,8 @@ class BlogController extends Controller
             $fileName =  str_random(6).'.'.$file->getClientOriginalExtension();
             $file->move($dir , $fileName);
             // resize image using intervention
-            Image::make($dir . $fileName)->resize(540, 370)->save($dir.'540x370'.$fileName);
+            Image::make($dir . $fileName)->resize(540, 370)->save($dir.'540x370/'.$fileName);
+            Image::make($dir . $fileName)->resize(80, 55)->save($dir.'80x55/'.$fileName);
             $blog->image_url = $fileName ;
         }
 

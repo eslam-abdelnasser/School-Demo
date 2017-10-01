@@ -7,11 +7,9 @@
                     <p class="font-12 mt-10 mb-10">{{trans('footer.text')}}</p>
                     <a class="btn btn-default btn-transparent btn-xs btn-flat mt-5" href="#">{{trans('labels.read-more')}}</a>
                     <ul class="styled-icons icon-dark icon-theme-colored icon-circled icon-sm mt-20">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        @foreach($socials as $social)
+                            <li><a href="{{$social->url}}"><i class="fa fa-{{$social->icon}}"></i></a> </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -19,27 +17,19 @@
                 <div class="widget dark">
                     <h5 class="widget-title line-bottom-theme-colored-2">{{trans('footer.latest-news')}}</h5>
                     <div class="latest-posts">
-                        <article class="post media-post clearfix pb-0 mb-10">
-                            <a class="post-thumb" href="#"><img src="{{asset('front/images/footer/7.png')}}" alt=""></a>
-                            <div class="post-right">
-                                <h5 class="post-title mt-0 mb-5"><a href="#">{{trans('labels.title1')}}</a></h5>
-                                <p class="post-date mb-0 font-12">Mar 08, 2015</p>
-                            </div>
-                        </article>
-                        <article class="post media-post clearfix pb-0 mb-10">
-                            <a class="post-thumb" href="#"><img src="{{asset('front/images/footer/8.png')}}" alt=""></a>
-                            <div class="post-right">
-                                <h5 class="post-title mt-0 mb-5"><a href="#">{{trans('labels.title2')}}s</a></h5>
-                                <p class="post-date mb-0 font-12">Mar 08, 2015</p>
-                            </div>
-                        </article>
-                        <article class="post media-post clearfix pb-0 mb-10">
-                            <a class="post-thumb" href="#"><img src="{{asset('front/images/footer/9.png')}}" alt=""></a>
-                            <div class="post-right">
-                                <h5 class="post-title mt-0 mb-5"><a href="#">{{trans('labels.title3')}}</a></h5>
-                                <p class="post-date mb-0 font-12">Mar 08, 2015</p>
-                            </div>
-                        </article>
+                        @foreach($blog as $singleBlog)
+                            @foreach($singleBlog->description  as $description)
+                                @if(LaravelLocalization::getCurrentLocale() == $description->language->label )
+                                    <article class="post media-post clearfix pb-0 mb-10">
+                                        <a class="post-thumb" href="{{route('blog.details',$singleBlog->id)}}"><img src="{{asset('uploads/blogs/80x55/'.$singleBlog->image_url)}}" alt=""></a>
+                                        <div class="post-right">
+                                            <h5 class="post-title mt-0 mb-5"><a href="{{route('blog.details',$singleBlog->id)}}">{{$description->title}}</a></h5>
+                                            <p class="post-date mb-0 font-12">{{date("F j, Y",strtotime($singleBlog->created_at))}}</p>
+                                        </div>
+                                    </article>
+                                @endif
+                            @endforeach
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -114,11 +104,9 @@
         <div class="row">
             <div class="col-md-12">
                 <ul class="list-inline styled-icons icon-hover-theme-colored icon-gray icon-circled text-center mt-30 mb-10">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a> </li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a> </li>
-                    <li><a href="#"><i class="fa fa-pinterest"></i></a> </li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a> </li>
-                    <li><a href="#"><i class="fa fa-youtube"></i></a> </li>
+                    @foreach($socials as $social)
+                        <li><a href="{{$social->url}}"><i class="fa fa-{{$social->icon}}"></i></a> </li>
+                    @endforeach
                 </ul>
             </div>
         </div>

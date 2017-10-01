@@ -132,9 +132,9 @@
             </div>
             <div class="widget">
                 <ul class="styled-icons icon-dark icon-theme-colored icon-sm">
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    @foreach($socials as $social)
+                        <li><a href="{{$social->url}}"><i class="fa fa-{{$social->icon}}"></i></a> </li>
+                    @endforeach
                 </ul>
             </div>
             <p>Copyright &copy;2016 ThemeMascot</p>

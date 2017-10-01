@@ -20,4 +20,24 @@ class AboutUsController extends Controller
 
         return view('front.media');
     }
+
+
+    public function educationLevel(){
+
+        return view('front.education-level');
+
+    }
+
+
+    public function   supervisor(){
+
+        return view('front.supervisor');
+
+    }
+
+
+    public function admissionRoles(){
+
+        return view('front.admission-roles');
+    }
 }
