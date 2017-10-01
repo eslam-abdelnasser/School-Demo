@@ -1,6 +1,6 @@
 @extends('front.layout')
 
-@section('title','الرئيسية')
+@section('title',trans('front.teachers'))
 
 
 
@@ -14,11 +14,11 @@
             <div class="section-content">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h3 class="font-28">Teachers</h3></h2>
+                        <h3 class="font-28">{{trans('front.teachers')}}</h3></h2>
                         <ol class="breadcrumb text-center text-black mt-10">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Teachers</a></li>
-                            <li class="active text-theme-colored">Page Title</li>
+                            <li><a href="#">{{trans('front.home')}}</a></li>
+                            <li><a href="{{route('teachers')}}">{{trans('front.teachers')}}</a></li>
+                            <li class="active text-theme-colored">{{trans('front.home')}}</li>
                         </ol>
                     </div>
                 </div>
@@ -34,11 +34,10 @@
             <div class="section-title text-center">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h2 class="text-uppercase mt-0 line-height-1">Our Teachers</h2>
+                        <h2 class="text-uppercase mt-0 line-height-1">{{trans('front.our_teachers')}}</h2>
                         <div class="title-icon">
                             <img class="mb-10" src="images/title-icon.png" alt="">
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem<br> voluptatem obcaecati!</p>
                     </div>
                 </div>
             </div>
@@ -48,18 +47,18 @@
                         @foreach($teachers as $teacher)
                             @foreach($teacher->description as $description)
                                 @if(LaravelLocalization::getCurrentLocale() == $description->language->label)
-                                     <div class="item">
-                                      <div class="team-members border-bottom-theme-color-2px text-center maxwidth400">
+                                    <div class="item">
+                                        <div class="team-members border-bottom-theme-color-2px text-center maxwidth400">
                                             <div class="team-thumb">
                                                 <img class="img-fullwidth" alt="" src="{{asset('uploads/teachers/275x370/'.$teacher->image_url)}}">
                                                 <div class="team-overlay"></div>
                                             </div>
                                             <div class="team-details bg-silver-light pt-10 pb-10">
-                                                <h4 class="text-uppercase font-weight-600 m-5">{{$description->name}}</h4>
+                                                <h4 class="text-uppercase font-weight-600 m-5"> {{$description->name}}</h4>
                                                 <h6 class="text-theme-colored font-15 font-weight-400 mt-0">{{$description->job_title}}</h6>
                                             </div>
                                         </div>
-                                     </div>
+                                    </div>
                                 @endif
                             @endforeach
                         @endforeach

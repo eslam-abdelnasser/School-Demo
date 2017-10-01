@@ -70,13 +70,13 @@ class NewController extends Controller
 
 
         //upload image to server directory to service
-        $dir = public_path().'/uploads/news/540x370/';
+        $dir = public_path().'/uploads/news/';
         $file = $request->file('image_url') ;
         $fileName =  str_random(6).'.'.$file->getClientOriginalExtension();
         $file->move($dir , $fileName);
         // resize image using intervention
-        Image::make($dir . $fileName)->resize(540, 370)->save($dir.$fileName);
-//        Image::make($dir . $fileName)->resize(1920, 1280)->save($dir.'1920x1280/'.$fileName);
+        Image::make($dir . $fileName)->resize(540, 370)->save($dir.'540x370/'.$fileName);
+        Image::make($dir . $fileName)->resize(1920, 1280)->save($dir.'1920x1280/'.$fileName);
         $news->image_url = $fileName ;
         $news->save();
 

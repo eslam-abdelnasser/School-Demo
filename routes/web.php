@@ -141,7 +141,7 @@ Route::group([
     Route::get('/laboratories', 'ListController@laboratory')->name('laboratories');
     Route::get('/activities', 'ListController@activity')->name('activities');
 
-    Route::get('/services', 'ListController@activity')->name('services');
+    Route::get('/services', 'ListController@service')->name('services');
 
     Route::get('/service/{slug}/details', 'DetailsController@service')->name('services.details');
     // details of list

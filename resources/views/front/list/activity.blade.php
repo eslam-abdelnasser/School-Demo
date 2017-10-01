@@ -1,11 +1,11 @@
 @extends('front.layout')
 
-@section('title','الرئيسية')
-
+@section('title',trans('front.activities'))
 
 
 
 @section('css')
+
 @endsection
 @section('content')
     <section class="inner-header divider parallax layer-overlay overlay-white-8" data-bg-img="http://placehold.it/1920x743">
@@ -14,11 +14,11 @@
             <div class="section-content">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h3 class="font-28">News</h3></h2>
+                        <h3 class="font-28">{{trans('front.activities')}}</h3></h2>
                         <ol class="breadcrumb text-center text-black mt-10">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">News</a></li>
-                            <li class="active text-theme-colored">News</li>
+                            <li><a href="#">{{trans('front.home')}}</a></li>
+                            <li><a href="{{route('activities')}}">{{trans('front.activities')}}</a></li>
+                            <li class="active text-theme-colored">{{trans('front.activities')}}</li>
                         </ol>
                     </div>
                 </div>
@@ -44,8 +44,8 @@
                                             <div class="entry-meta media mt-0 no-bg no-border">
                                                 <div class="entry-date media-left text-center flip bg-theme-colored pt-5 pr-15 pb-5 pl-15">
                                                     <ul>
-                                                        <li class="font-16 text-white font-weight-600">28</li>
-                                                        <li class="font-12 text-white text-uppercase">Feb</li>
+                                                        <li class="font-16 text-white font-weight-600">{{ date('d' , strtotime($activity->created_at)) }}</li>
+                                                        <li class="font-12 text-white text-uppercase">{{ date('F' , strtotime($activity->created_at)) }}</li>
                                                     </ul>
                                                 </div>
                                                 <div class="media-body pl-15">
@@ -57,7 +57,7 @@
                                                 </div>
                                             </div>
                                             <p class="mt-10">{!! strip_tags(str_limit(html_entity_decode($description->description,100))) !!}</p>
-                                            <a href="{{route('activities.details',$description->slug)}}" class="btn-read-more">Read more</a>
+                                            <a href="{{route('activities.details',$description->slug)}}" class="btn-read-more">{{trans('front.read_more')}}</a>
                                             <div class="clearfix"></div>
                                         </div>
                                     </article>

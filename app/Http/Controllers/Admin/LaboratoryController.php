@@ -71,13 +71,13 @@ class LaboratoryController extends Controller
 
 
         //upload image to server directory to service
-        $dir = public_path().'/uploads/laboratories/540x370/';
+        $dir = public_path().'/uploads/laboratories/';
         $file = $request->file('image_url') ;
         $fileName =  str_random(6).'.'.$file->getClientOriginalExtension();
         $file->move($dir , $fileName);
         // resize image using intervention
-        Image::make($dir . $fileName)->resize(540, 370)->save($dir.$fileName);
-//        Image::make($dir . $fileName)->resize(1920, 1280)->save($dir.'1920x1280/'.$fileName);
+        Image::make($dir . $fileName)->resize(540, 370)->save($dir.'540x370/'.$fileName);
+        Image::make($dir . $fileName)->resize(1920, 1280)->save($dir.'1920x1280/'.$fileName);
         $laboratory->image_url = $fileName ;
         $laboratory->save();
 
@@ -158,14 +158,14 @@ class LaboratoryController extends Controller
 
         if($request->hasFile('image_url')){
             //upload image to server directory to service
-            $dir = public_path().'/uploads/laboratories/540x370/';
+            $dir = public_path().'/uploads/laboratories/';
             File::delete($dir . $laboratory->image_url);
             $file = $request->file('image_url') ;
             $fileName =  str_random(6).'.'.$file->getClientOriginalExtension();
             $file->move($dir , $fileName);
             // resize image using intervention
-            Image::make($dir . $fileName)->resize(540, 370)->save($dir.$fileName);
-//            Image::make($dir . $fileName)->resize(1920, 1280)->save($dir.'1920x1280'.$fileName);
+            Image::make($dir . $fileName)->resize(540, 370)->save($dir.'540x370/'.$fileName);
+            Image::make($dir . $fileName)->resize(1920, 1280)->save($dir.'1920x1280/'.$fileName);
 
             $laboratory->image_url = $fileName ;
         }

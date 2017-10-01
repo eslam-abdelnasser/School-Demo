@@ -1,6 +1,6 @@
 @extends('front.layout')
 
-@section('title','الرئيسية')
+@section('title',trans('front.activities'))
 
 
 
@@ -14,11 +14,11 @@
             <div class="section-content">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h3 class="font-28">Activity</h3></h2>
+                        <h3 class="font-28">{{trans('front.activities')}}</h3></h2>
                         <ol class="breadcrumb text-center text-black mt-10">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About us</a></li>
-                            <li class="active text-theme-colored">Page Title</li>
+                            <li><a href="#">{{trans('front.home')}}</a></li>
+                            <li><a href="{{route('activities')}}">{{trans('front.activities')}}</a></li>
+                            <li class="active text-theme-colored">{{trans('front.activities')}}</li>
                         </ol>
                     </div>
                 </div>
@@ -40,8 +40,8 @@
                                         <div class="entry-meta media no-bg no-border mt-15 pb-20">
                                             <div class="entry-date media-left text-center flip bg-theme-colored pt-5 pr-15 pb-5 pl-15">
                                                 <ul>
-                                                    <li class="font-16 text-white font-weight-600">28</li>
-                                                    <li class="font-12 text-white text-uppercase">Feb</li>
+                                                    <li class="font-16 text-white font-weight-600">{{ date('d' , strtotime($activity->created_at)) }}</li>
+                                                    <li class="font-12 text-white text-uppercase">{{ date('F' , strtotime($activity->created_at)) }}</li>
                                                 </ul>
                                             </div>
                                             <div class="media-body pl-15">
