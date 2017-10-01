@@ -128,9 +128,7 @@ Route::group([
 
 
 
-    Route::get('/', function () {
-        return view('front.index');
-    });
+    Route::get('/','HomeController@index')->name('home');
 
     Route::get('/about-us', 'AboutUsController@index')->name('about-us');
     Route::get('/blog', 'ListController@blog')->name('blog');
