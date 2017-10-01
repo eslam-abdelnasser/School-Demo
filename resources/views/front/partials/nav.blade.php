@@ -65,6 +65,7 @@
 
                             <ul class="dropdown">
                                 <li><a href="{{route('about-us')}}">About</a></li>
+                                <li><a href='{{route('services')}}'>Services</a></li>
                                 <li><a href="#">Education level</a></li>
                                 <li><a href="#">Curriculum</a></li>
                                 <li><a href="#">Supervisor</a></li>
@@ -72,6 +73,7 @@
                             </ul>
 
                         </li>
+
                         <li><a href='{{route('blog')}}'>Blog</a></li>
 
                         <li><a href='{{route('laboratories')}}'>laboratories</a></li>

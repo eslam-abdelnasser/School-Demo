@@ -777,104 +777,12 @@
 
 
 
-    {{-- make appointment--}}
-    <!-- Section: Contact -->
-    <section id="contact" class="bg-lighter">
-        <div class="container pb-0">
-            <div class="section-content">
-                <div class="row">
-                    <div class="col-md-4" data-wow-duration="1.4s">
-                        <img src="http://placehold.it/340x464" alt="">
-                    </div>
-                    <div class="col-md-8 wow fadeInRight mt-10" data-wow-duration="1.4s">
-                        <h3 class="title line-bottom line-height-1 mt-0 mb-30">Make An <span class="text-theme-colored">Appointment!</span></h3>
-                        <!-- Contact Form -->
-                        <form id="contact_form" name="contact_form" class="" action="includes/sendmail.php" method="post">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group mb-20">
-                                        <input name="form_name" class="form-control" type="text" placeholder="Enter Name" required="">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group mb-20">
-                                        <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group mb-30">
-                                        <div class="styled-select">
-                                            <select id="car_select" name="car_select" class="form-control" required="">
-                                                <option value="">- Select Your Services -</option>
-                                                <option value="Orthopaedics">Orthopaedics</option>
-                                                <option value="Cardiology">Cardiology</option>
-                                                <option value="Neurology">Neurology</option>
-                                                <option value="Dental">Dental</option>
-                                                <option value="Haematology">Haematology</option>
-                                                <option value="Blood Test">Blood Test</option>
-                                                <option value="Emergency Care">Emergency Care</option>
-                                                <option value="Outdoor Checkup">Outdoor Checkup</option>
-                                                <option value="Cancer Service">Cancer Service</option>
-                                                <option value="Pharmacy">Pharmacy</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group mb-30">
-                                        <input name="reservation_date" class="form-control required date-picker" type="text" placeholder="Reservation Date" aria-required="true">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group mb-20">
-                                <textarea name="form_message" class="form-control required" rows="5" placeholder="Enter Message"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <input name="form_botcheck" class="form-control" type="hidden" value=""/>
-                                <button type="submit" class="btn btn-flat btn-theme-colored text-uppercase mt-0 mb-sm-30" data-loading-text="Please wait...">Send your message</button>
-                                <button type="reset" class="btn btn-flat btn-theme-colored text-uppercase mt-0 mb-sm-30">Reset</button>
-                            </div>
-                        </form>
-                        <!-- Contact Form Validation-->
-                        <script type="text/javascript">
-                            $("#contact_form").validate({
-                                submitHandler: function(form) {
-                                    var form_btn = $(form).find('button[type="submit"]');
-                                    var form_result_div = '#form-result';
-                                    $(form_result_div).remove();
-                                    form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
-                                    var form_btn_old_msg = form_btn.html();
-                                    form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
-                                    $(form).ajaxSubmit({
-                                        dataType:  'json',
-                                        success: function(data) {
-                                            if( data.status == 'true' ) {
-                                                $(form).find('.form-control').val('');
-                                            }
-                                            form_btn.prop('disabled', false).html(form_btn_old_msg);
-                                            $(form_result_div).html(data.message).fadeIn('slow');
-                                            setTimeout(function(){ $(form_result_div).fadeOut('slow') }, 6000);
-                                        }
-                                    });
-                                }
-                            });
-                        </script>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    {{-- make appointment--}}
 
 
     {{-- start blog --}}
 
     <!-- Section: blog -->
-    <section id="blog" class="">
+    <section id="blog" class="bg-lighter">
         <div class="container">
             <div class="section-title text-center">
                 <div class="row">
