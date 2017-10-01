@@ -84,6 +84,7 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
+                    @if(Auth::guard('admin')->user()->can('language.index'))
                     <li class="nav-item start">
                         <a href="{{route('languages.index')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
@@ -91,14 +92,16 @@
                             <span class="selected"></span>
                         </a>
                     </li>
-
-                    <li class="nav-item start">
+                    @endif
+                        @if(Auth::guard('admin')->user()->can('language.create'))
+                        <li class="nav-item start">
                         <a href="{{route('languages.create')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
                             <span class="title">{{trans('admin/partials/navigation.add_new_language')}}</span>
                             <span class="selected"></span>
                         </a>
                     </li>
+                            @endif
 
 
 
@@ -116,6 +119,8 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
+                    @if(Auth::guard('admin')->user()->can('admins.index'))
+
                     <li class="nav-item start">
                         <a href="{{route('admins.index')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
@@ -123,6 +128,8 @@
                             <span class="selected"></span>
                         </a>
                     </li>
+                    @endif
+                        @if(Auth::guard('admin')->user()->can('roles.index'))
 
                     <li class="nav-item start">
                         <a href="{{route('roles.index')}}" class="nav-link ">
@@ -131,7 +138,8 @@
                             <span class="selected"></span>
                         </a>
                     </li>
-
+                    @endif
+                        @if(Auth::guard('admin')->user()->can('permission.index'))
 
                     <li class="nav-item start">
                         <a href="{{route('permission.index')}}" class="nav-link ">
@@ -140,8 +148,7 @@
                             <span class="selected"></span>
                         </a>
                     </li>
-
-
+                            @endif
 
                 </ul>
             </li>
@@ -159,6 +166,7 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
+                    @if(Auth::guard('admin')->user()->can('slider.index'))
                     <li class="nav-item start">
                         <a href="{{route('slider.index')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
@@ -166,25 +174,28 @@
                             <span class="selected"></span>
                         </a>
                     </li>
+                    @endif
 
-                    <li class="nav-item start">
+                        @if(Auth::guard('admin')->user()->can('slider.create'))
+                        <li class="nav-item start">
                         <a href="{{route('slider.create')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
                             <span class="title">Create slider</span>
                             <span class="selected"></span>
                         </a>
                     </li>
+                            @endif
                 </ul>
             </li>
+            @if(Auth::guard('admin')->user()->can('admin.about.index'))
+
             <li class="nav-item start">
                 <a href="{{route('admin.about.index')}}" class="nav-link nav-toggle">
                     <i class="icon-puzzle"></i>
                     <span class="title">{{trans('admin/partials/navigation.about_us')}}</span>
-
-
                 </a>
-
             </li>
+            @endif
 
 
             <li class="nav-item start">
@@ -195,6 +206,7 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
+                    @if(Auth::guard('admin')->user()->can('services.index'))
                     <li class="nav-item start">
                         <a href="{{route('services.index')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
@@ -202,7 +214,8 @@
                             <span class="selected"></span>
                         </a>
                     </li>
-
+                    @endif
+                        @if(Auth::guard('admin')->user()->can('services.create'))
                     <li class="nav-item start">
                         <a href="{{route('services.create')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
@@ -210,6 +223,7 @@
                             <span class="selected"></span>
                         </a>
                     </li>
+                            @endif
                 </ul>
             </li>
 
@@ -222,6 +236,8 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
+                    @if(Auth::guard('admin')->user()->can('faq.index'))
+
                     <li class="nav-item start">
                         <a href="{{route('faqs.index')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
@@ -229,7 +245,8 @@
                             <span class="selected"></span>
                         </a>
                     </li>
-
+                    @endif
+                        @if(Auth::guard('admin')->user()->can('faq.create'))
                     <li class="nav-item start">
                         <a href="{{route('faqs.create')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
@@ -237,6 +254,7 @@
                             <span class="selected"></span>
                         </a>
                     </li>
+                            @endif
                 </ul>
             </li>
 
@@ -249,6 +267,7 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
+                    @if(Auth::guard('admin')->user()->can('blogs.index'))
                     <li class="nav-item start">
                         <a href="{{route('blogs.index')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
@@ -256,7 +275,8 @@
                             <span class="selected"></span>
                         </a>
                     </li>
-
+                    @endif
+                        @if(Auth::guard('admin')->user()->can('blogs.create'))
                     <li class="nav-item start">
                         <a href="{{route('blogs.create')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
@@ -264,6 +284,7 @@
                             <span class="selected"></span>
                         </a>
                     </li>
+                            @endif
                 </ul>
             </li>
 
@@ -276,6 +297,7 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
+                    @if(Auth::guard('admin')->user()->can('careers.index'))
                     <li class="nav-item start">
                         <a href="{{route('careers.index')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
@@ -283,7 +305,8 @@
                             <span class="selected"></span>
                         </a>
                     </li>
-
+                    @endif
+                        @if(Auth::guard('admin')->user()->can('services.create'))
                     <li class="nav-item start">
                         <a href="{{route('careers.create')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
@@ -291,6 +314,7 @@
                             <span class="selected"></span>
                         </a>
                     </li>
+                            @endif
                 </ul>
             </li>
 
@@ -304,6 +328,7 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
+                    @if(Auth::guard('admin')->user()->can('galleries.index'))
                     <li class="nav-item start">
                         <a href="{{route('galleries.index')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
@@ -311,7 +336,8 @@
                             <span class="selected"></span>
                         </a>
                     </li>
-
+                    @endif
+                        @if(Auth::guard('admin')->user()->can('galleries.create'))
                     <li class="nav-item start">
                         <a href="{{route('galleries.create')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
@@ -319,6 +345,7 @@
                             <span class="selected"></span>
                         </a>
                     </li>
+                            @endif
                 </ul>
             </li>
 
@@ -336,6 +363,8 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
+
+                    @if(Auth::guard('admin')->user()->can('teachers.index'))
                     <li class="nav-item start">
                         <a href="{{route('teachers.index')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
@@ -343,7 +372,9 @@
                             <span class="selected"></span>
                         </a>
                     </li>
+                    @endif
 
+                        @if(Auth::guard('admin')->user()->can('teachers.create'))
                     <li class="nav-item start">
                         <a href="{{route('teachers.create')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
@@ -351,6 +382,7 @@
                             <span class="selected"></span>
                         </a>
                     </li>
+                            @endif
                 </ul>
             </li>
 
@@ -363,6 +395,8 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
+
+                    @if(Auth::guard('admin')->user()->can('laboratories.index'))
                     <li class="nav-item start">
                         <a href="{{route('laboratories.index')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
@@ -370,7 +404,9 @@
                             <span class="selected"></span>
                         </a>
                     </li>
+                    @endif
 
+                        @if(Auth::guard('admin')->user()->can('laboratories.create'))
                     <li class="nav-item start">
                         <a href="{{route('laboratories.create')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
@@ -378,6 +414,7 @@
                             <span class="selected"></span>
                         </a>
                     </li>
+                            @endif
                 </ul>
             </li>
 
@@ -389,6 +426,7 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
+                    @if(Auth::guard('admin')->user()->can('news.index'))
                     <li class="nav-item start">
                         <a href="{{route('news.index')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
@@ -396,6 +434,8 @@
                             <span class="selected"></span>
                         </a>
                     </li>
+                    @endif
+                        @if(Auth::guard('admin')->user()->can('news.create'))
 
                     <li class="nav-item start">
                         <a href="{{route('news.create')}}" class="nav-link ">
@@ -404,6 +444,7 @@
                             <span class="selected"></span>
                         </a>
                     </li>
+                            @endif
                 </ul>
             </li>
 
@@ -417,6 +458,8 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
+                    @if(Auth::guard('admin')->user()->can('activities.index'))
+
                     <li class="nav-item start">
                         <a href="{{route('activities.index')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
@@ -424,6 +467,8 @@
                             <span class="selected"></span>
                         </a>
                     </li>
+                    @endif
+                        @if(Auth::guard('admin')->user()->can('activities.create'))
 
                     <li class="nav-item start">
                         <a href="{{route('activities.create')}}" class="nav-link ">
@@ -432,6 +477,7 @@
                             <span class="selected"></span>
                         </a>
                     </li>
+                            @endif
                 </ul>
             </li>
 
@@ -443,6 +489,7 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
+                    @if(Auth::guard('admin')->user()->can('supervisors.index'))
                     <li class="nav-item start">
                         <a href="{{route('supervisors.index')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
@@ -450,7 +497,8 @@
                             <span class="selected"></span>
                         </a>
                     </li>
-
+                    @endif
+                        @if(Auth::guard('admin')->user()->can('supervisors.create'))
                     <li class="nav-item start">
                         <a href="{{route('supervisors.create')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
@@ -458,6 +506,7 @@
                             <span class="selected"></span>
                         </a>
                     </li>
+                            @endif
                 </ul>
             </li>
 
@@ -469,6 +518,8 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
+                    @if(Auth::guard('admin')->user()->can('admission-roles.index'))
+
                     <li class="nav-item start">
                         <a href="{{route('admission-roles.index')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
@@ -476,14 +527,16 @@
                             <span class="selected"></span>
                         </a>
                     </li>
-
-                    <li class="nav-item start">
-                        <a href="{{route('admission-roles.create')}}" class="nav-link ">
-                            <i class="icon-bar-chart"></i>
-                            <span class="title">{{trans('admin/partials/navigation.add_new_admission_role')}}</span>
-                            <span class="selected"></span>
-                        </a>
-                    </li>
+                    @endif
+                        @if(Auth::guard('admin')->user()->can('admission-roles.create'))
+                            <li class="nav-item start">
+                                <a href="{{route('admission-roles.create')}}" class="nav-link ">
+                                    <i class="icon-bar-chart"></i>
+                                    <span class="title">{{trans('admin/partials/navigation.add_new_admission_role')}}</span>
+                                    <span class="selected"></span>
+                                </a>
+                            </li>
+                        @endif
                 </ul>
             </li>
 
@@ -495,21 +548,25 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="nav-item start">
-                        <a href="{{route('education-levels.index')}}" class="nav-link ">
-                            <i class="icon-bar-chart"></i>
-                            <span class="title">{{trans('admin/partials/navigation.education_level')}}</span>
-                            <span class="selected"></span>
-                        </a>
-                    </li>
+                        @if(Auth::guard('admin')->user()->can('education-levels.index'))
+                            <li class="nav-item start">
+                                <a href="{{route('education-levels.index')}}" class="nav-link ">
+                                    <i class="icon-bar-chart"></i>
+                                    <span class="title">{{trans('admin/partials/navigation.education_level')}}</span>
+                                    <span class="selected"></span>
+                                </a>
+                            </li>
+                        @endif
 
-                    <li class="nav-item start">
-                        <a href="{{route('education-levels.create')}}" class="nav-link ">
-                            <i class="icon-bar-chart"></i>
-                            <span class="title">{{trans('admin/partials/navigation.add_new_education_level')}}</span>
-                            <span class="selected"></span>
-                        </a>
-                    </li>
+                        @if(Auth::guard('admin')->user()->can('education-levels.create'))
+                        <li class="nav-item start">
+                            <a href="{{route('education-levels.create')}}" class="nav-link ">
+                                <i class="icon-bar-chart"></i>
+                                <span class="title">{{trans('admin/partials/navigation.add_new_education_level')}}</span>
+                                <span class="selected"></span>
+                            </a>
+                         </li>
+                        @endif
                 </ul>
             </li>
 
