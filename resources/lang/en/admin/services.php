@@ -8,7 +8,7 @@
 return [
     'service' => 'Service',
     'service_table' => 'Service Table',
-    'add_new' => 'Add New ervice',
+    'add_new' => 'Add New service',
     'delete' => 'Delete',
     'show' => 'Show',
     'service_title' => 'Service Title',

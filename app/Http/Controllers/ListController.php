@@ -6,6 +6,7 @@ use App\Models\Activity;
 use App\Models\Career;
 use App\Models\Laboratory;
 use App\Models\News;
+use App\Models\Service;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
 use App\Models\Blog ;
@@ -19,12 +20,13 @@ class ListController extends Controller
         return view('front.list.blog')->withBlog($blog);
     }
 
+
     public function teacher(){
         $teachers = Teacher::where('status','=','1')->paginate(10);
         return view('front.list.teacher')->with('teachers',$teachers);
 
     }
-    public function news(){
+    public function News(){
         $news = News::where('status','=','1')->paginate(10);
         return view('front.list.news')->with('news',$news);
 
@@ -44,8 +46,10 @@ class ListController extends Controller
         return view('front.list.career')->with('careers',$careers);
     }
 
-
-
+    public function  service(){
+        $services = Service::where('status','=','1')->paginate(10);
+        return view('front.list.service')->with('services',$services);
+    }
 
 
 

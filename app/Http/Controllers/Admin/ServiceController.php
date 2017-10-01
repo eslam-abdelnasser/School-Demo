@@ -76,7 +76,8 @@ class ServiceController extends Controller
         $fileName =  str_random(6).'.'.$file->getClientOriginalExtension();
         $file->move($dir , $fileName);
         // resize image using intervention
-        Image::make($dir . $fileName)->resize(270, 137)->save($dir. $fileName);
+        Image::make($dir . $fileName)->resize(540, 370)->save($dir.'540x370/'. $fileName);
+        Image::make($dir . $fileName)->resize(1920, 1280)->save($dir.'1920x1280/'. $fileName);
         $service->image_url = $fileName ;
 
 
@@ -163,13 +164,13 @@ class ServiceController extends Controller
 
         if($request->hasFile('image_url')){
             //upload image to server directory to service
-            $dir = public_path().'/uploads/services/';
+            $dir = public_path().'/uploads/services/540x370/';
             File::delete($dir . $service->image_url);
             $file = $request->file('image_url') ;
             $fileName =  str_random(6).'.'.$file->getClientOriginalExtension();
             $file->move($dir , $fileName);
             // resize image using intervention
-            Image::make($dir . $fileName)->resize(270, 137)->save($dir. $fileName);
+            Image::make($dir . $fileName)->resize(540, 370)->save($dir. $fileName);
             $service->image_url = $fileName ;
         }
 

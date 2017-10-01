@@ -576,7 +576,7 @@
             <div class="section-title text-center">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h2 class="text-uppercase mt-0 line-height-1">Our Doctors</h2>
+                        <h2 class="text-uppercase mt-0 line-height-1">{{trans('front.our_teachers')}}</h2>
                         <div class="title-icon">
                             <img class="mb-10" src="images/title-icon.png" alt="">
                         </div>
@@ -587,78 +587,25 @@
             <div class="row mtli-row-clearfix">
                 <div class="col-md-12">
                     <div class="owl-carousel-4col">
-                        <div class="item">
-                            <div class="team-members border-bottom-theme-color-2px text-center maxwidth400">
-                                <div class="team-thumb">
-                                    <img class="img-fullwidth" alt="" src="http://placehold.it/275x370">
-                                    <div class="team-overlay"></div>
-                                </div>
-                                <div class="team-details bg-silver-light pt-10 pb-10">
-                                    <h4 class="text-uppercase font-weight-600 m-5">Dr. Sakib Jhon</h4>
-                                    <h6 class="text-theme-colored font-15 font-weight-400 mt-0">Mbbs Doctor</h6>
-                                    <ul class="styled-icons icon-theme-colored icon-dark icon-circled icon-sm">
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="team-members border-bottom-theme-color-2px text-center maxwidth400">
-                                <div class="team-thumb">
-                                    <img class="img-fullwidth" alt="" src="http://placehold.it/275x370">
-                                    <div class="team-overlay"></div>
-                                </div>
-                                <div class="team-details bg-silver-light pt-10 pb-10">
-                                    <h4 class="text-uppercase font-weight-600 m-5">Dr. Smile Jhon</h4>
-                                    <h6 class="text-theme-colored font-15 font-weight-400 mt-0">Mbbs Doctor</h6>
-                                    <ul class="styled-icons icon-theme-colored icon-dark icon-circled icon-sm">
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="team-members border-bottom-theme-color-2px text-center maxwidth400">
-                                <div class="team-thumb">
-                                    <img class="img-fullwidth" alt="" src="http://placehold.it/275x370">
-                                    <div class="team-overlay"></div>
-                                </div>
-                                <div class="team-details bg-silver-light pt-10 pb-10">
-                                    <h4 class="text-uppercase font-weight-600 m-5">Dr. Sakib Jhon</h4>
-                                    <h6 class="text-theme-colored font-15 font-weight-400 mt-0">Mbbs Doctor</h6>
-                                    <ul class="styled-icons icon-theme-colored icon-dark icon-circled icon-sm">
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="team-members border-bottom-theme-color-2px text-center maxwidth400">
-                                <div class="team-thumb">
-                                    <img class="img-fullwidth" alt="" src="http://placehold.it/275x370">
-                                    <div class="team-overlay"></div>
-                                </div>
-                                <div class="team-details bg-silver-light pt-10 pb-10">
-                                    <h4 class="text-uppercase font-weight-600 m-5">Dr. Smile Jhon</h4>
-                                    <h6 class="text-theme-colored font-15 font-weight-400 mt-0">Mbbs Doctor</h6>
-                                    <ul class="styled-icons icon-theme-colored icon-dark icon-circled icon-sm">
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        @foreach($teachers as $teacher)
+                            @foreach($teacher->description as $description)
+                                @if($description->language->label == LaravelLocalization::getCurrentLocale())
+                                    <div class="item">
+                                        <div class="team-members border-bottom-theme-color-2px text-center maxwidth400">
+                                            <div class="team-thumb">
+                                                <img class="img-fullwidth" alt="" src="{{asset('uploads/teachers/275x370/'.$teacher->image_url)}}">
+                                                <div class="team-overlay"></div>
+                                            </div>
+                                            <div class="team-details bg-silver-light pt-10 pb-10">
+                                                <h4 class="text-uppercase font-weight-600 m-5">{{$description->name}}</h4>
+                                                <h6 class="text-theme-colored font-15 font-weight-400 mt-0">{{$description->job_title}}</h6>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -763,51 +710,64 @@
             <div class="section-title text-center">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h2 class="text-uppercase mt-0 line-height-1">Gallery</h2>
+                        <h2 class="text-uppercase mt-0 line-height-1">{{trans('front.gallery')}}</h2>
                         <div class="title-icon">
                             <img class="mb-10" src="images/title-icon.png" alt="">
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem<br> voluptatem obcaecati!</p>
                     </div>
                 </div>
             </div>
             <div class="row">
-    <div class="portfolio-content portfolio-1">
-        <div id="js-filters-juicy-projects" class="cbp-l-filters-button">
-            <div data-filter="*" class="cbp-filter-item-active cbp-filter-item btn dark btn-outline uppercase"> All
-                <div class="cbp-filter-counter"></div>
-            </div>
-            <div data-filter=".images" class="cbp-filter-item btn dark btn-outline uppercase"> Images
-                <div class="cbp-filter-counter"></div>
-            </div>
-            <div data-filter=".video" class="cbp-filter-item btn dark btn-outline uppercase"> youtube videos
-                <div class="cbp-filter-counter"></div>
-            </div>
-
-        </div>
-        <div id="js-grid-juicy-projects" class="cbp">
-
-                <div class="cbp-item images">
-                    <div class="cbp-caption">
-                        <div class="cbp-caption-defaultWrap">
-
-                                <img src="{{asset('uploads/galleries/admin/1.png')}}" alt="">
-
+                <div class="portfolio-content portfolio-1">
+                    <div id="js-filters-juicy-projects" class="cbp-l-filters-button">
+                        <div data-filter="*" class="cbp-filter-item-active cbp-filter-item btn dark btn-outline uppercase"> All
+                            <div class="cbp-filter-counter"></div>
                         </div>
-                        <div class="cbp-caption-activeWrap">
-                            <div class="cbp-l-caption-alignCenter">
-                                <div class="cbp-l-caption-body">
-                                        <a href="https://www.youtube.com/watch?v=55BnfXKgbN4" class="cbp-lightbox cbp-l-caption-buttonRight btn red uppercase btn red uppercase" data-title="Dashboard<br>by Paul Flavius Nechita">view larger</a>
+                        @foreach($galleries as $gallery)
+                            @foreach($gallery->description as $description)
+                                @if($description->language->label == LaravelLocalization::getCurrentLocale())
+                                    <div data-filter=".gallery{{$gallery->id}}" class="cbp-filter-item btn dark btn-outline uppercase"> {{$description->title}}
+                                        <div class="cbp-filter-counter"></div>
+                                    </div>
+
+                                @endif
+                            @endforeach
+                        @endforeach
+
+                    </div>
+                    <div id="js-grid-juicy-projects" class="cbp">
+                        @foreach($galleries as $gallery)
+                            @foreach($gallery->media->take(8) as $media)
+                                <div class="cbp-item gallery{{$gallery->id}}">
+                                    <div class="cbp-caption">
+                                        <div class="cbp-caption-defaultWrap">
+
+                                            @if($media->type == '1')
+                                                <img src="{{asset('uploads/galleries/admin/1.png')}}" alt="">
+                                            @else
+                                                <img src="{{asset('uploads/galleries/admin/600x600/'.$media->image_url)}}" alt="">
+                                            @endif
+
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignCenter">
+                                                <div class="cbp-l-caption-body">
+                                                    @if($media->type == '1')
+                                                        <a href="https://www.youtube.com/watch?v={{$media->video_url}}" class="cbp-lightbox cbp-l-caption-buttonRight btn red uppercase btn red uppercase" data-title="Dashboard<br>by Paul Flavius Nechita">{{trans('admin/galleries.view_larger')}}</a>
+                                                    @else
+                                                        <a href="{{asset('uploads/galleries/admin/1200x900/'.$media->image_url)}}" class="cbp-lightbox cbp-l-caption-buttonRight btn red uppercase btn red uppercase" data-title="Dashboard<br>by Paul Flavius Nechita">{{trans('admin/galleries.view_larger')}}</a>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                 </div>
-                            </div>
-                        </div>
+                            @endforeach
+                        @endforeach
                     </div>
 
                 </div>
-        </div>
-
-    </div>
 
 
 
@@ -827,11 +787,10 @@
             <div class="section-title text-center">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h2 class="text-uppercase mt-0 line-height-1">News</h2>
+                        <h2 class="text-uppercase mt-0 line-height-1">{{trans('front.news')}}</h2>
                         <div class="title-icon">
                             <img class="mb-10" src="images/title-icon.png" alt="">
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem<br> voluptatem obcaecati!</p>
                     </div>
                 </div>
             </div>

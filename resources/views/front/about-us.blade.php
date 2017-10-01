@@ -1,6 +1,6 @@
 @extends('front.layout')
 
-@section('title','الرئيسية')
+@section('title',trans('front.about_us'))
 
 
 
@@ -14,12 +14,12 @@
             <div class="section-content">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h3 class="font-28">About us</h3></h2>
-                            <ol class="breadcrumb text-center text-black mt-10">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About us</a></li>
-                                <li class="active text-theme-colored">Page Title</li>
-                            </ol>
+                        <h3 class="font-28">{{trans('front.about_us')}}</h3></h2>
+                        <ol class="breadcrumb text-center text-black mt-10">
+                            <li><a href="#">{{trans('front.home')}}</a></li>
+                            <li><a href="{{route('about_us.index')}}">{{trans('front.about_us')}}</a></li>
+                            <li class="active text-theme-colored">Page Title</li>
+                        </ol>
                     </div>
                 </div>
             </div>
@@ -34,13 +34,13 @@
 
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h2 class="title font-42 text-theme-colored mt-30 mb-20">World Best Hospital</h2>
-                        <p class="mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam modi consequuntur maxime voluptates earum illo sunt, veritatis maiores doloribus ut id, nostrum. Temporibus odit quas illum eos dolores itaque facilis omnis beatae saepe eum. Odit labore vel temporibus quasi.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam modi consequuntur maxime voluptates earum illo sunt, veritatis maiores doloribus ut id, nostrum. Temporibus odit quas illum eos dolores itaque facilis omnis beatae saepe eum. Odit labore vel temporibus.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam modi consequuntur maxime voluptates earum illo sunt, veritatis maiores doloribus ut id, nostrum. Temporibus odit quas illum eos dolores itaque facilis omnis beatae saepe eum. Odit labore vel temporibus.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam modi consequuntur maxime voluptates earum illo sunt, veritatis maiores doloribus ut id, nostrum. Temporibus odit quas illum eos dolores itaque facilis omnis beatae saepe eum. Odit labore vel temporibus.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam modi consequuntur maxime voluptates earum illo sunt, veritatis maiores doloribus ut id, nostrum. Temporibus odit quas illum eos dolores itaque facilis omnis beatae saepe eum. Odit labore vel temporibus.</p>
+                        @foreach($about_us->description  as $description )
+                            @if($description->language->label == LaravelLocalization::getCurrentLocale())
+                                <h2 class="title font-42 text-theme-colored mt-30 mb-20">{{$description->title}}</h2>
+                                <p class="mb-20">{!! html_entity_decode($description->description) !!}.</p>
 
+                            @endif
+                        @endforeach
                     </div>
                 </div>
             </div>

@@ -12,6 +12,8 @@ use App\Models\Laboratory;
 use App\Models\LaboratoryDescription;
 use App\Models\NewDescription;
 use App\Models\News;
+use App\Models\Service;
+use App\Models\ServiceDescription;
 use App\Models\Teacher;
 use App\Models\TeacherDescription;
 use Illuminate\Http\Request;
@@ -51,6 +53,12 @@ class DetailsController extends Controller
         $laboratoryDescription = LaboratoryDescription::where('slug','=',$slug)->first();
         $laboratory = Laboratory::find($laboratoryDescription->laboratory_id);
         return view('front.details.laboratory')->with('laboratory',$laboratory);
+    }
+    public function service($slug)
+    {
+        $serviceDescription = ServiceDescription::where('slug','=',$slug)->first();
+        $service = Service::find($serviceDescription->service_id);
+        return view('front.details.service')->with('service',$service);
     }
 
 
