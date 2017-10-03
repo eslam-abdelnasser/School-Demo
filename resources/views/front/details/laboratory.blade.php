@@ -18,7 +18,7 @@
                         <ol class="breadcrumb text-center text-black mt-10">
                             <li><a href="#">{{trans('front.home')}}</a></li>
                             <li><a href="{{route('laboratories')}}">{{trans('front.laboratory')}}</a></li>
-                            <li class="active text-theme-colored">{{trans('front.laboratories')}}</li>
+                            <li class="active text-theme-colored">{{trans('front.laboratory')}}</li>
                         </ol>
                     </div>
                 </div>

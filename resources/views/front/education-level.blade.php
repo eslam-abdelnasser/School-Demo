@@ -30,23 +30,29 @@
     <section class="position-inherit">
         <div class="container">
             <div class="row">
-                @foreach($levels as $level)
-                    @if($level->language->label == LaravelLocalization::getCurrentLocale())
+
                 <div class="col-md-3 scrolltofixed-container">
                     <div class="list-group scrolltofixed z-index-0">
+                        @foreach($levels as $level)
+                            @if($level->language->label == LaravelLocalization::getCurrentLocale())
                         <a href="{{$level->id}}" class="list-group-item smooth-scroll-to-target">{{$level->title}}</a>
+                            @endif
+                        @endforeach
                     </div>
                 </div>
-                <div class="col-md-9">
 
-                    <div id="{{$level->id}}" class="mb-50">
-                        <h3>{{$level->title}}</h3>
-                        <hr>
-                        <p class="mb-20">{{$level->description}}</p>
-                    </div>
+                <div class="col-md-9">
+                    @foreach($levels as $level)
+                        @if($level->language->label == LaravelLocalization::getCurrentLocale())
+                            <div id="{{$level->id}}" class="mb-50">
+                                <h3>{{$level->title}}</h3>
+                                <hr>
+                                <p class="mb-20">{{$level->description}}</p>
+                            </div>
+                        @endif
+                    @endforeach
                 </div>
-                    @endif
-                @endforeach
+
             </div>
         </div>
     </section>

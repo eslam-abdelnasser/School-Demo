@@ -6,6 +6,7 @@
 
 
 @section('css')
+
 @endsection
 @section('content')
     <section class="inner-header divider parallax layer-overlay overlay-white-8" data-bg-img="http://placehold.it/1920x743">
@@ -53,17 +54,8 @@
 
 
                                         {!! html_entity_decode($description->description) !!}
-                                        {{--<p class="mb-15">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>--}}
-                                        {{--<p class="mb-15">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>--}}
-                                        {{--<blockquote class="theme-colored pt-20 pb-20">--}}
-                                        {{--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>--}}
-                                        {{--<footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>--}}
-                                        {{--</blockquote>--}}
-                                        {{--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna et sed aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>--}}
-
                                     </div>
                                 </article>
-
 
                             </div>
                         </div>
@@ -72,7 +64,9 @@
             </section>
         @endif
     @endforeach
-
 @endsection
+
+@section('js')
+    @endsection
 
 

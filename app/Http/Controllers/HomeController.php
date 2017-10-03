@@ -42,5 +42,6 @@ class HomeController extends Controller
 
         return view('front.index')->withBlog($blog)->withGalleries($gallery)->withServices($sevices)->with('teachers',$teachers)->withSlider($data);
 
+
     }
 }

@@ -552,17 +552,20 @@
                 </ul>
             </li>
 
-
-
-
+                <li class="nav-item start">
+                    <a href="{{route('contact-us.index')}}" class="nav-link nav-toggle">
+                        <i class="icon-puzzle"></i>
+                        <span class="title"> {{trans('admin/appointment.contact-us')}}</span>
+                    </a>
+                </li>
             <li class="nav-item start">
                 <a href="{{route('admin.general.setting')}}" class="nav-link nav-toggle">
                     <i class="icon-puzzle"></i>
                     <span class="title"> {{trans('admin/partials/navigation.website_general_settings')}}</span>
 
                 </a>
-
         </ul>
+
         <!-- END SIDEBAR MENU -->
         <!-- END SIDEBAR MENU -->
     </div>

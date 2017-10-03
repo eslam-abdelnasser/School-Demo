@@ -23,6 +23,7 @@ class DetailsController extends Controller
     //
     public function blog($slug){
 
+
         $blogDescription = BlogDescription::where('slug','=',$slug)->first();
         $blog = Blog::find($blogDescription->blog_id);
         return view('front.details.blog')->withBlog($blog);

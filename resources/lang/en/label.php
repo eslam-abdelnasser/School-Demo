@@ -15,5 +15,8 @@ return [
 
     'logout' => 'logout',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-
+    'email' =>'Email',
+    'message' => 'Message',
+    'send' => 'Send',
+    'read' => 'Read Me',
 ];

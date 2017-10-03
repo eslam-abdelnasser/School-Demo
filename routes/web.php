@@ -75,6 +75,9 @@ Route::group([
     Route::resource('/careers','Admin\CareerController');
     Route::delete('/careers','Admin\CareerController@destroyAll')->name('careers.destroy.all');
 
+    Route::resource('/contact-us','Admin\ContactUsController');
+    Route::delete('/contact-us','Admin\Contact-usController@destroyAll')->name('contact-us.destroy.all');
+
 
     Route::get('/permissions', 'Admin\PermissionController@index')->name('permission.index');
     Route::get('/permissions/{permission_id}', 'Admin\PermissionController@edit')->name('permission.edit');
@@ -140,6 +143,10 @@ Route::group([
     Route::get('/media', 'AboutUsController@media')->name('media');
     Route::get('/careers', 'ListController@career')->name('careers');
     Route::get('/contact-us', 'ContactUsController@index')->name('contact-us');
+    Route::post('/contact-us-footer','ContactUsController@contactFooter')->name('contact-us-footer');
+    Route::post('/contact-us','ContactUsController@postMessage')->name('contact.post');
+    Route::post('/contact-us-footer','ContactUsController@contactFooter')->name('contact-us-footer');
+    Route::post('/contact-us','ContactUsController@postMessage')->name('contact.post');
 
     Route::get('/teachers', 'ListController@teacher')->name('teachers');
     Route::get('/news', 'ListController@news')->name('news');

@@ -56,7 +56,7 @@
 
                                             <div class="form-body">
                                                 <div class="form-group">
-                                                    <label>{{$language->name}} {{trans('admin/slider/index.second_title')}}</label>
+                                                    <label>{{$language->name}} {{trans('admin/slider/index.first_title')}}</label>
                                                     <div class="input-group">
                                                         <span class="input-group-addon input-circle-left">
                                                             <i class="fa fa-align-justify"></i>
@@ -69,7 +69,7 @@
                                                         <span class="input-group-addon input-circle-left">
                                                             <i class="fa fa-align-justify"></i>
                                                         </span>
-                                                        <input type="text" name="title_second_{{$language->label}}" value="{{old('title_second_'.$language->label)}}" id="title_second_{{$language->label}}" class="form-control input-circle-right" placeholder="{{trans('admin/slider/index.first_title')}}"> </div>
+                                                        <input type="text" name="title_second_{{$language->label}}" value="{{old('title_second_'.$language->label)}}" id="title_second_{{$language->label}}" class="form-control input-circle-right" placeholder="{{trans('admin/slider/index.second_title')}}"> </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>{{$language->name}} {{trans('admin/slider/index.description')}}</label>

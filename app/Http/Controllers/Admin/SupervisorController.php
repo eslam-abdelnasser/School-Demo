@@ -42,6 +42,7 @@ class SupervisorController extends Controller
     public function store(Request $request)
     {
         //
+
         $languages = Language::where('status','=','1')->get();
         $rules=[];
         foreach ($languages as  $language){
@@ -50,6 +51,13 @@ class SupervisorController extends Controller
             $rules['description_'.$language->label] = 'required';
         }
         $this->validate($request,$rules);
+
+        $supervisors = Supervisor::all();
+        if($supervisors){
+            foreach ($supervisors as $supervisor){
+                Supervisor::destroy($supervisor->id);
+            }
+        }
 
         foreach ($languages as $language){
             $supervisor = new Supervisor();
@@ -125,6 +133,7 @@ class SupervisorController extends Controller
     public function destroy($id)
     {
         //
+
         Supervisor::destroy($id);
         session()->flash('message','Supervisor deleted successfully');
         return redirect()->back();

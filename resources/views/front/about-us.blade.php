@@ -17,7 +17,7 @@
                         <h3 class="font-28">{{trans('front.about_us')}}</h3></h2>
                         <ol class="breadcrumb text-center text-black mt-10">
                             <li><a href="#">{{trans('front.home')}}</a></li>
-                            <li><a href="{{route('about_us.index')}}">{{trans('front.about_us')}}</a></li>
+                            <li><a href="{{route('about-us')}}">{{trans('front.about_us')}}</a></li>
                             <li class="active text-theme-colored">Page Title</li>
                         </ol>
                     </div>

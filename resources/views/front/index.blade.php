@@ -1,6 +1,6 @@
 @extends('front.layout')
 
-@section('title','الرئيسية')
+@section('title',trans('front.home'))
 
 
 @if(LaravelLocalization::getCurrentLocale() == 'ar')
@@ -27,325 +27,344 @@
             <div class="rev_slider_wrapper">
                 <div class="rev_slider" data-version="5.0">
                     <ul>
+                    @if(isset($slider[0]))
+                        @foreach($slider[0]->description as $singleSlider )
+                            @if($singleSlider->language->label == LaravelLocalization::getCurrentLocale())
+                                <!-- LAYER NR. 1 -->
+                                    <!-- SLIDE 1 -->
+                                    <li data-index="rs-1" data-transition="random" data-slotamount="7"  data-easein="default" data-easeout="default" data-masterspeed="1000"  data-thumb="http://placehold.it/1920x743"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Intro" data-description="">
+                                        <!-- MAIN IMAGE -->
+                                        <img src="{{asset('uploads/slider/1920x743/'.$slider[0]->slider_image)}}"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="6" data-no-retina>
+                                        <!-- LAYERS -->
 
-                        <!-- SLIDE 1 -->
-                        <li data-index="rs-1" data-transition="random" data-slotamount="7"  data-easein="default" data-easeout="default" data-masterspeed="1000"  data-thumb="http://placehold.it/1920x743"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Intro" data-description="">
-                            <!-- MAIN IMAGE -->
-                            <img src="http://placehold.it/1920x743"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="6" data-no-retina>
-                            <!-- LAYERS -->
+                                        <div class="tp-caption tp-resizeme text-uppercase text-white bg-dark-transparent-5 pl-30 pr-30"
+                                             id="rs-1-layer-1"
 
-                            <!-- LAYER NR. 1 -->
-                            <div class="tp-caption tp-resizeme text-uppercase text-white bg-dark-transparent-5 pl-30 pr-30"
-                                 id="rs-1-layer-1"
+                                             data-x="['center']"
+                                             data-hoffset="['0']"
+                                             data-y="['middle']"
+                                             data-voffset="['-90']"
+                                             data-fontsize="['28']"
+                                             data-lineheight="['54']"
+                                             data-width="none"
+                                             data-height="none"
+                                             data-whitespace="nowrap"
+                                             data-transform_idle="o:1;s:500"
+                                             data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;"
+                                             data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
+                                             data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                                             data-start="1000"
+                                             data-splitin="none"
+                                             data-splitout="none"
+                                             data-responsive_offset="on"
+                                             style="z-index: 7; white-space: nowrap; font-weight:600; border-radius:45px;">{{$singleSlider->title_first}}
+                                        </div>
 
-                                 data-x="['center']"
-                                 data-hoffset="['0']"
-                                 data-y="['middle']"
-                                 data-voffset="['-90']"
-                                 data-fontsize="['28']"
-                                 data-lineheight="['54']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;s:500"
-                                 data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;"
-                                 data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-                                 data-start="1000"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 7; white-space: nowrap; font-weight:600; border-radius:45px;">We Provide Total
-                            </div>
+                                        <!-- LAYER NR. 2 -->
+                                        <div class="tp-caption tp-resizeme text-uppercase text-white bg-theme-colored-transparent pl-40 pr-40"
+                                             id="rs-1-layer-2"
 
-                            <!-- LAYER NR. 2 -->
-                            <div class="tp-caption tp-resizeme text-uppercase text-white bg-theme-colored-transparent pl-40 pr-40"
-                                 id="rs-1-layer-2"
+                                             data-x="['center']"
+                                             data-hoffset="['0']"
+                                             data-y="['middle']"
+                                             data-voffset="['-20']"
+                                             data-fontsize="['48']"
+                                             data-lineheight="['70']"
+                                             data-width="none"
+                                             data-height="none"
+                                             data-whitespace="nowrap"
+                                             data-transform_idle="o:1;s:500"
+                                             data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;"
+                                             data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
+                                             data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                                             data-start="1000"
+                                             data-splitin="none"
+                                             data-splitout="none"
+                                             data-responsive_offset="on"
+                                             style="z-index: 7; white-space: nowrap; font-weight:600; border-radius:45px;">{{$singleSlider->title_second}}
+                                        </div>
 
-                                 data-x="['center']"
-                                 data-hoffset="['0']"
-                                 data-y="['middle']"
-                                 data-voffset="['-20']"
-                                 data-fontsize="['48']"
-                                 data-lineheight="['70']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;s:500"
-                                 data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;"
-                                 data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-                                 data-start="1000"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 7; white-space: nowrap; font-weight:600; border-radius:45px;">Health Care Solution
-                            </div>
+                                        <!-- LAYER NR. 3 -->
+                                        <div class="tp-caption tp-resizeme text-center text-black"
+                                             id="rs-1-layer-3"
 
-                            <!-- LAYER NR. 3 -->
-                            <div class="tp-caption tp-resizeme text-center text-black"
-                                 id="rs-1-layer-3"
+                                             data-x="['center']"
+                                             data-hoffset="['0']"
+                                             data-y="['middle']"
+                                             data-voffset="['50','60','70']"
+                                             data-fontsize="['16','18','24']"
+                                             data-lineheight="['28']"
+                                             data-width="none"
+                                             data-height="none"
+                                             data-whitespace="nowrap"
+                                             data-transform_idle="o:1;s:500"
+                                             data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;"
+                                             data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
+                                             data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                                             data-start="1400"
+                                             data-splitin="none"
+                                             data-splitout="none"
+                                             data-responsive_offset="on"
+                                             style="z-index: 5; white-space: nowrap; letter-spacing:0px; font-weight:400;">{!! $singleSlider->description !!}
+                                        </div>
 
-                                 data-x="['center']"
-                                 data-hoffset="['0']"
-                                 data-y="['middle']"
-                                 data-voffset="['50','60','70']"
-                                 data-fontsize="['16','18','24']"
-                                 data-lineheight="['28']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;s:500"
-                                 data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;"
-                                 data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-                                 data-start="1400"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 5; white-space: nowrap; letter-spacing:0px; font-weight:400;">Every day we bring hope to millions of children in the world's<br>  hardest places as a sign of God's unconditional love.
-                            </div>
+                                        <!-- LAYER NR. 4 -->
+                                        <div class="tp-caption tp-resizeme"
+                                             id="rs-1-layer-4"
 
-                            <!-- LAYER NR. 4 -->
-                            <div class="tp-caption tp-resizeme"
-                                 id="rs-1-layer-4"
+                                             data-x="['center']"
+                                             data-hoffset="['0']"
+                                             data-y="['middle']"
+                                             data-voffset="['135','145','155']"
+                                             data-width="none"
+                                             data-height="none"
+                                             data-whitespace="nowrap"
+                                             data-transform_idle="o:1;"
+                                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                             data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                                             data-start="1400"
+                                             data-splitin="none"
+                                             data-splitout="none"
+                                             data-responsive_offset="on"
+                                             style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a class="btn btn-colored btn-lg btn-theme-colored pl-20 pr-20" href="{{$slider[0]->slider_url}}">View Details</a>
+                                        </div>
+                                    </li>
+                            @endif
+                        @endforeach
+                    @endif
 
-                                 data-x="['center']"
-                                 data-hoffset="['0']"
-                                 data-y="['middle']"
-                                 data-voffset="['135','145','155']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                                 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                                 data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                                 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-                                 data-start="1400"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a class="btn btn-colored btn-lg btn-theme-colored pl-20 pr-20" href="#">View Details</a>
-                            </div>
-                        </li>
+                    @if(isset($slider[1]))
+                        @foreach($slider[1]->description as $singleSlider )
+                            @if($singleSlider->language->label == LaravelLocalization::getCurrentLocale())
+                                <!-- SLIDE 2 -->
+                                    <li data-index="rs-2" data-transition="random" data-slotamount="7"  data-easein="default" data-easeout="default" data-masterspeed="1000"  data-thumb="http://placehold.it/1920x743"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Intro" data-description="">
+                                        <!-- MAIN IMAGE -->
+                                        <img src="http://placehold.it/1920x743"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="6" data-no-retina>
+                                        <!-- LAYERS -->
 
-                        <!-- SLIDE 2 -->
-                        <li data-index="rs-2" data-transition="random" data-slotamount="7"  data-easein="default" data-easeout="default" data-masterspeed="1000"  data-thumb="http://placehold.it/1920x743"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Intro" data-description="">
-                            <!-- MAIN IMAGE -->
-                            <img src="http://placehold.it/1920x743"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="6" data-no-retina>
-                            <!-- LAYERS -->
+                                        <!-- LAYER NR. 1 -->
+                                        <div class="tp-caption tp-resizeme text-uppercase text-white bg-dark-transparent-5 pl-15 pr-15"
+                                             id="rs-2-layer-1"
 
-                            <!-- LAYER NR. 1 -->
-                            <div class="tp-caption tp-resizeme text-uppercase text-white bg-dark-transparent-5 pl-15 pr-15"
-                                 id="rs-2-layer-1"
+                                             data-x="['left']"
+                                             data-hoffset="['30']"
+                                             data-y="['middle']"
+                                             data-voffset="['-110']"
+                                             data-fontsize="['30']"
+                                             data-lineheight="['50']"
 
-                                 data-x="['left']"
-                                 data-hoffset="['30']"
-                                 data-y="['middle']"
-                                 data-voffset="['-110']"
-                                 data-fontsize="['30']"
-                                 data-lineheight="['50']"
+                                             data-width="none"
+                                             data-height="none"
+                                             data-whitespace="nowrap"
+                                             data-transform_idle="o:1;s:500"
+                                             data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;"
+                                             data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
+                                             data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                                             data-start="1000"
+                                             data-splitin="none"
+                                             data-splitout="none"
+                                             data-responsive_offset="on"
+                                             style="z-index: 7; white-space: nowrap; font-weight:600;">{{$singleSlider->title_first}}
+                                        </div>
 
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;s:500"
-                                 data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;"
-                                 data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-                                 data-start="1000"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 7; white-space: nowrap; font-weight:600;">We Provide Total
-                            </div>
+                                        <!-- LAYER NR. 2 -->
+                                        <div class="tp-caption tp-resizeme text-uppercase text-white bg-theme-colored-transparent pl-15 pr-15"
+                                             id="rs-2-layer-2"
 
-                            <!-- LAYER NR. 2 -->
-                            <div class="tp-caption tp-resizeme text-uppercase text-white bg-theme-colored-transparent pl-15 pr-15"
-                                 id="rs-2-layer-2"
+                                             data-x="['left']"
+                                             data-hoffset="['30']"
+                                             data-y="['middle']"
+                                             data-voffset="['-45']"
+                                             data-fontsize="['48']"
+                                             data-lineheight="['70']"
 
-                                 data-x="['left']"
-                                 data-hoffset="['30']"
-                                 data-y="['middle']"
-                                 data-voffset="['-45']"
-                                 data-fontsize="['48']"
-                                 data-lineheight="['70']"
+                                             data-width="none"
+                                             data-height="none"
+                                             data-whitespace="nowrap"
+                                             data-transform_idle="o:1;s:500"
+                                             data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;"
+                                             data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
+                                             data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                                             data-start="1000"
+                                             data-splitin="none"
+                                             data-splitout="none"
+                                             data-responsive_offset="on"
+                                             style="z-index: 7; white-space: nowrap; font-weight:600;">{{$singleSlider->title_second}}
+                                        </div>
 
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;s:500"
-                                 data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;"
-                                 data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-                                 data-start="1000"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 7; white-space: nowrap; font-weight:600;">Health Care Solution
-                            </div>
+                                        <!-- LAYER NR. 3 -->
+                                        <div class="tp-caption tp-resizeme text-black"
+                                             id="rs-2-layer-3"
 
-                            <!-- LAYER NR. 3 -->
-                            <div class="tp-caption tp-resizeme text-black"
-                                 id="rs-2-layer-3"
+                                             data-x="['left']"
+                                             data-hoffset="['35']"
+                                             data-y="['middle']"
+                                             data-voffset="['35','45','55']"
+                                             data-fontsize="['16','18','24']"
+                                             data-lineheight="['28']"
+                                             data-width="none"
+                                             data-height="none"
+                                             data-whitespace="nowrap"
+                                             data-transform_idle="o:1;s:500"
+                                             data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;"
+                                             data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
+                                             data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                                             data-start="1400"
+                                             data-splitin="none"
+                                             data-splitout="none"
+                                             data-responsive_offset="on"
+                                             style="z-index: 5; white-space: nowrap; letter-spacing:0px; font-weight:400;">{{$singleSlider->description}}
+                                        </div>
 
-                                 data-x="['left']"
-                                 data-hoffset="['35']"
-                                 data-y="['middle']"
-                                 data-voffset="['35','45','55']"
-                                 data-fontsize="['16','18','24']"
-                                 data-lineheight="['28']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;s:500"
-                                 data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;"
-                                 data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-                                 data-start="1400"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 5; white-space: nowrap; letter-spacing:0px; font-weight:400;">Every day we bring hope to millions of children in the world's<br>  hardest places as a sign of God's unconditional love.
-                            </div>
+                                        <!-- LAYER NR. 4 -->
+                                        <div class="tp-caption tp-resizeme"
+                                             id="rs-2-layer-4"
 
-                            <!-- LAYER NR. 4 -->
-                            <div class="tp-caption tp-resizeme"
-                                 id="rs-2-layer-4"
+                                             data-x="['left']"
+                                             data-hoffset="['35']"
+                                             data-y="['middle']"
+                                             data-voffset="['110','120','140']"
+                                             data-width="none"
+                                             data-height="none"
+                                             data-whitespace="nowrap"
+                                             data-transform_idle="o:1;"
+                                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                             data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                                             data-start="1400"
+                                             data-splitin="none"
+                                             data-splitout="none"
+                                             data-responsive_offset="on"
+                                             style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a class="btn btn-colored btn-lg btn-theme-colored pl-20 pr-20" href="{{$slider[1]->slider_url}}">View Details</a>
+                                        </div>
+                                    </li>
+                            @endif
+                        @endforeach
+                    @endif
 
-                                 data-x="['left']"
-                                 data-hoffset="['35']"
-                                 data-y="['middle']"
-                                 data-voffset="['110','120','140']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                                 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                                 data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                                 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-                                 data-start="1400"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a class="btn btn-colored btn-lg btn-theme-colored pl-20 pr-20" href="#">View Details</a>
-                            </div>
-                        </li>
+                    @if(isset($slider[2]))
+                        @foreach($slider[2]->description as $singleSlider )
+                            @if($singleSlider->language->label == LaravelLocalization::getCurrentLocale())
+                                <!-- SLIDE 3 -->
+                                    <li data-index="rs-3" data-transition="random" data-slotamount="7"  data-easein="default" data-easeout="default" data-masterspeed="1000"  data-thumb="http://placehold.it/1920x743"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Intro" data-description="">
+                                        <!-- MAIN IMAGE -->
+                                        <img src="http://placehold.it/1920x743"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="6" data-no-retina>
+                                        <!-- LAYERS -->
 
-                        <!-- SLIDE 3 -->
-                        <li data-index="rs-3" data-transition="random" data-slotamount="7"  data-easein="default" data-easeout="default" data-masterspeed="1000"  data-thumb="http://placehold.it/1920x743"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Intro" data-description="">
-                            <!-- MAIN IMAGE -->
-                            <img src="http://placehold.it/1920x743"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="6" data-no-retina>
-                            <!-- LAYERS -->
+                                        <!-- LAYER NR. 1 -->
+                                        <div class="tp-caption tp-resizeme text-uppercase text-white bg-dark-transparent-5 pl-15 pr-15"
+                                             id="rs-3-layer-1"
 
-                            <!-- LAYER NR. 1 -->
-                            <div class="tp-caption tp-resizeme text-uppercase text-white bg-dark-transparent-5 pl-15 pr-15"
-                                 id="rs-3-layer-1"
+                                             data-x="['right']"
+                                             data-hoffset="['30']"
+                                             data-y="['middle']"
+                                             data-voffset="['-110']"
+                                             data-fontsize="['30']"
+                                             data-lineheight="['50']"
 
-                                 data-x="['right']"
-                                 data-hoffset="['30']"
-                                 data-y="['middle']"
-                                 data-voffset="['-110']"
-                                 data-fontsize="['30']"
-                                 data-lineheight="['50']"
+                                             data-width="none"
+                                             data-height="none"
+                                             data-whitespace="nowrap"
+                                             data-transform_idle="o:1;s:500"
+                                             data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;"
+                                             data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
+                                             data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                                             data-start="1000"
+                                             data-splitin="none"
+                                             data-splitout="none"
+                                             data-responsive_offset="on"
+                                             style="z-index: 7; white-space: nowrap; font-weight:600;">{{$singleSlider->title_first}}
+                                        </div>
 
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;s:500"
-                                 data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;"
-                                 data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-                                 data-start="1000"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 7; white-space: nowrap; font-weight:600;">We Provide Total
-                            </div>
+                                        <!-- LAYER NR. 2 -->
+                                        <div class="tp-caption tp-resizeme text-uppercase text-white bg-theme-colored-transparent pl-15 pr-15"
+                                             id="rs-3-layer-2"
 
-                            <!-- LAYER NR. 2 -->
-                            <div class="tp-caption tp-resizeme text-uppercase text-white bg-theme-colored-transparent pl-15 pr-15"
-                                 id="rs-3-layer-2"
+                                             data-x="['right']"
+                                             data-hoffset="['30']"
+                                             data-y="['middle']"
+                                             data-voffset="['-45']"
+                                             data-fontsize="['48']"
+                                             data-lineheight="['70']"
 
-                                 data-x="['right']"
-                                 data-hoffset="['30']"
-                                 data-y="['middle']"
-                                 data-voffset="['-45']"
-                                 data-fontsize="['48']"
-                                 data-lineheight="['70']"
+                                             data-width="none"
+                                             data-height="none"
+                                             data-whitespace="nowrap"
+                                             data-transform_idle="o:1;s:500"
+                                             data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;"
+                                             data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
+                                             data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                                             data-start="1000"
+                                             data-splitin="none"
+                                             data-splitout="none"
+                                             data-responsive_offset="on"
+                                             style="z-index: 7; white-space: nowrap; font-weight:600;">{{$singleSlider->title_second}}
+                                        </div>
 
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;s:500"
-                                 data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;"
-                                 data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-                                 data-start="1000"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 7; white-space: nowrap; font-weight:600;">Health Care Solution
-                            </div>
+                                        <!-- LAYER NR. 3 -->
+                                        <div class="tp-caption tp-resizeme text-right text-black"
+                                             id="rs-3-layer-3"
 
-                            <!-- LAYER NR. 3 -->
-                            <div class="tp-caption tp-resizeme text-right text-black"
-                                 id="rs-3-layer-3"
+                                             data-x="['right']"
+                                             data-hoffset="['35']"
+                                             data-y="['middle']"
+                                             data-voffset="['30','40','50']"
+                                             data-fontsize="['16','18','24']"
+                                             data-lineheight="['28']"
+                                             data-width="none"
+                                             data-height="none"
+                                             data-whitespace="nowrap"
+                                             data-transform_idle="o:1;s:500"
+                                             data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;"
+                                             data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
+                                             data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                                             data-start="1400"
+                                             data-splitin="none"
+                                             data-splitout="none"
+                                             data-responsive_offset="on"
+                                             style="z-index: 5; white-space: nowrap; letter-spacing:0px; font-weight:400;">{{$singleSlider->description}}
+                                        </div>
 
-                                 data-x="['right']"
-                                 data-hoffset="['35']"
-                                 data-y="['middle']"
-                                 data-voffset="['30','40','50']"
-                                 data-fontsize="['16','18','24']"
-                                 data-lineheight="['28']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;s:500"
-                                 data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;"
-                                 data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
-                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-                                 data-start="1400"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 5; white-space: nowrap; letter-spacing:0px; font-weight:400;">Every day we bring hope to millions of children in the world's<br>  hardest places as a sign of God's unconditional love.
-                            </div>
+                                        <!-- LAYER NR. 4 -->
+                                        <div class="tp-caption tp-resizeme"
+                                             id="rs-3-layer-4"
 
-                            <!-- LAYER NR. 4 -->
-                            <div class="tp-caption tp-resizeme"
-                                 id="rs-3-layer-4"
+                                             data-x="['right']"
+                                             data-hoffset="['35']"
+                                             data-y="['middle']"
+                                             data-voffset="['110','120','140']"
+                                             data-width="none"
+                                             data-height="none"
+                                             data-whitespace="nowrap"
+                                             data-transform_idle="o:1;"
+                                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                             data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                                             data-start="1400"
+                                             data-splitin="none"
+                                             data-splitout="none"
+                                             data-responsive_offset="on"
+                                             style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a class="btn btn-colored btn-lg btn-theme-colored pl-20 pr-20" href="{{$slider[2]->slider_url}}">View Details</a>
+                                        </div>
 
-                                 data-x="['right']"
-                                 data-hoffset="['35']"
-                                 data-y="['middle']"
-                                 data-voffset="['110','120','140']"
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-transform_idle="o:1;"
-                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                                 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                                 data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                                 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-                                 data-start="1400"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-responsive_offset="on"
-                                 style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a class="btn btn-colored btn-lg btn-theme-colored pl-20 pr-20" href="#">View Details</a>
-                            </div>
-                        </li>
+
+                                    </li>
+                                @endif
+                            @endforeach
+                        @endif
                     </ul>
                 </div><!-- end .rev_slider -->
             </div>
@@ -445,7 +464,7 @@
 
         </div>
     </section>
-{{-- end slider--}}
+    {{-- end slider--}}
 
     <section class="bg-theme-colored">
         <div class="container pt-0 pb-20">
@@ -482,11 +501,13 @@
 
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h2 class="title font-42 text-theme-colored mt-30 mb-20">World Best Hospital</h2>
-                        <p class="mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam modi consequuntur maxime voluptates earum illo sunt, veritatis maiores doloribus ut id, nostrum. Temporibus odit quas illum eos dolores itaque facilis omnis beatae saepe eum. Odit labore vel temporibus quasi.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam modi consequuntur maxime voluptates earum illo sunt, veritatis maiores doloribus ut id, nostrum. Temporibus odit quas illum eos dolores itaque facilis omnis beatae saepe eum. Odit labore vel temporibus.</p>
-                        <a class="btn btn-colored btn-theme-colored btn-lg text-uppercase font-13 mt-30" href="#">Medikal Details</a>
-                        <a class="btn btn-theme-colored btn-lg text-uppercase text-white font-13 mt-30" href="#">Time Table</a>
+                        @foreach($about_us->description  as $description)
+                            @if($description->language->label == LaravelLocalization::getCurrentLocale())
+                                <h2 class="title font-42 text-theme-colored mt-30 mb-20">{{$description->title}}</h2>
+                                {!! str_limit(html_entity_decode($description->description),200) !!}
+                                <a class="btn btn-colored btn-theme-colored btn-lg text-uppercase font-13 mt-30" href="{{route('about-us')}}">{{trans('front.read_more')}}</a>
+                            @endif
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -504,64 +525,30 @@
             <div class="section-title text-center">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h2 class="text-uppercase mt-0 line-height-1">Services</h2>
+                        <h2 class="text-uppercase mt-0 line-height-1">{{trans('front.services')}}</h2>
                         <div class="title-icon">
                             <img class="mb-10" src="images/title-icon.png" alt="">
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem<br> voluptatem obcaecati!</p>
                     </div>
                 </div>
             </div>
             <div class="section-content">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="icon-box left media p-0"> <a href="#" class="media-left pull-left"><i class="flaticon-medical-ambulance14 text-theme-colored"></i></a>
-                            <div class="media-body">
-                                <h5 class="media-heading heading">Emergency Care</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum consectetur sit ullam perspiciatis, deserunt.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="icon-box left media p-0"> <a href="#" class="media-left pull-left"><i class="flaticon-medical-illness text-theme-colored"></i></a>
-                            <div class="media-body">
-                                <h5 class="media-heading heading">Operation Theatre</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum consectetur sit ullam perspiciatis, deserunt.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="icon-box left media p-0"> <a href="#" class="media-left pull-left"><i class="flaticon-medical-stethoscope10 text-theme-colored"></i></a>
-                            <div class="media-body">
-                                <h5 class="media-heading heading">Outdoor Checkup</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum consectetur sit ullam perspiciatis, deserunt.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="icon-box left media p-0"> <a href="#" class="media-left pull-left"><i class="flaticon-medical-medical51 text-theme-colored"></i></a>
-                            <div class="media-body">
-                                <h5 class="media-heading heading">Cancer Service</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum consectetur sit ullam perspiciatis, deserunt.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="icon-box left media p-0"> <a href="#" class="media-left pull-left"><i class="flaticon-medical-hospital35 text-theme-colored"></i></a>
-                            <div class="media-body">
-                                <h5 class="media-heading heading">Blood Test</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum consectetur sit ullam perspiciatis, deserunt.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="icon-box left media p-0"> <a href="#" class="media-left pull-left"><i class="flaticon-medical-tablets9 text-theme-colored"></i></a>
-                            <div class="media-body">
-                                <h5 class="media-heading heading">Pharmacy</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum consectetur sit ullam perspiciatis, deserunt.</p>
-                            </div>
-                        </div>
-                    </div>
+                    @foreach($services as $service)
+                        @foreach($service->description as $description)
+                            @if($description->language->label == LaravelLocalization::getCurrentLocale())
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                    <div class="icon-box left media p-0"> <a href="{{route('services.details',$description->slug)}}" class="media-left pull-left"><i class="{{$service->icon}} text-theme-colored"></i></a>
+                                        <div class="media-body">
+                                            <h5 class="media-heading heading"><a href="{{route('services.details',$description->slug)}}">{{$description->title}}</a></h5>
+                                            {!! str_limit(html_entity_decode($description->description),100) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
+                    @endforeach
+
                 </div>
             </div>
         </div>
@@ -569,18 +556,17 @@
     {{-- end services--}}
 
 
-    {{-- Our doctors--}}
-    <!-- Section: Doctors -->
+    {{-- Our teachers--}}
+    <!-- Section: Teachers -->
     <section id="doctors">
         <div class="container">
             <div class="section-title text-center">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h2 class="text-uppercase mt-0 line-height-1">{{trans('front.our_teachers')}}</h2>
+                        <h2 class="text-uppercase mt-0 line-height-1">{{trans('front.teachers')}}</h2>
                         <div class="title-icon">
                             <img class="mb-10" src="images/title-icon.png" alt="">
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem<br> voluptatem obcaecati!</p>
                     </div>
                 </div>
             </div>
@@ -617,90 +603,6 @@
 
 
 
-    {{-- start departments --}}
-
-    <!-- Section: Departments -->
-    <section class="bg-lighter">
-        <div class="container">
-            <div class="section-title text-center">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h2 class="text-uppercase mt-0 line-height-1">Our Departments</h2>
-                        <div class="title-icon">
-                            <img class="mb-10" src="images/title-icon.png" alt="">
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem<br> voluptatem obcaecati!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="section-content">
-                <div class="row">
-                    <div class="col-md-4 col-sm-6">
-                        <div class="feturead mb-30 mb-sm-30">
-                            <div class="thumb"> <img src="http://placehold.it/360x205" class="img-fullwidth" alt=""> </div>
-                            <div class="bg-white p-20">
-                                <h4 class="line-bottom text-uppercase font-weight-600 mt-0 mb-15">Departments Title</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus.</p>
-                                <a class="btn btn-theme-colored btn-sm btn-flat" href="#">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="feturead mb-30 mb-sm-30">
-                            <div class="thumb"> <img src="http://placehold.it/360x205" class="img-fullwidth" alt=""> </div>
-                            <div class="bg-white p-20">
-                                <h4 class="line-bottom text-uppercase font-weight-600 mt-0 mb-15">Departments Title</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus.</p>
-                                <a class="btn btn-theme-colored btn-sm btn-flat" href="#">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="feturead mb-30 mb-sm-30">
-                            <div class="thumb"> <img src="http://placehold.it/360x205" class="img-fullwidth" alt=""> </div>
-                            <div class="bg-white p-20">
-                                <h4 class="line-bottom text-uppercase font-weight-600 mt-0 mb-15">Departments Title</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus.</p>
-                                <a class="btn btn-theme-colored btn-sm btn-flat" href="#">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="feturead mb-sm-30">
-                            <div class="thumb"> <img src="http://placehold.it/360x205" class="img-fullwidth" alt=""> </div>
-                            <div class="bg-white p-20">
-                                <h4 class="line-bottom text-uppercase font-weight-600 mt-0 mb-15">Departments Title</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus.</p>
-                                <a class="btn btn-theme-colored btn-sm btn-flat" href="#">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="feturead mb-sm-30">
-                            <div class="thumb"> <img src="http://placehold.it/360x205" class="img-fullwidth" alt=""> </div>
-                            <div class="bg-white p-20">
-                                <h4 class="line-bottom text-uppercase font-weight-600 mt-0 mb-15">Departments Title</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus.</p>
-                                <a class="btn btn-theme-colored btn-sm btn-flat" href="#">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="feturead">
-                            <div class="thumb"> <img src="http://placehold.it/360x205" class="img-fullwidth" alt=""> </div>
-                            <div class="bg-white p-20">
-                                <h4 class="line-bottom text-uppercase font-weight-600 mt-0 mb-15">Departments Title</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus.</p>
-                                <a class="btn btn-theme-colored btn-sm btn-flat" href="#">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- end departments --}}
 
 
 
@@ -775,22 +677,19 @@
     {{-- gallery --}}
 
 
-
-
-
-
     {{-- start blog --}}
 
     <!-- Section: blog -->
-    <section id="blog" class="bg-lighter">
+    <section id="blog" class="">
         <div class="container">
             <div class="section-title text-center">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h2 class="text-uppercase mt-0 line-height-1">{{trans('front.news')}}</h2>
+                        <h2 class="text-uppercase mt-0 line-height-1">{{trans('front.blog')}}</h2>
                         <div class="title-icon">
                             <img class="mb-10" src="images/title-icon.png" alt="">
                         </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem<br> voluptatem obcaecati!</p>
                     </div>
                 </div>
             </div>
@@ -798,87 +697,38 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="owl-carousel-3col">
-                            <div class="item">
-                                <article class="post clearfix bg-white">
-                                    <div class="entry-header">
-                                        <div class="post-thumb thumb">
-                                            <img src="http://placehold.it/540x370" alt="" class="img-responsive img-fullwidth">
-                                        </div>
-                                        <div class="entry-date media-left text-center flip bg-theme-colored pt-5 pr-15 pb-5 pl-15">
-                                            <ul>
-                                                <li class="font-16 text-white font-weight-600">28</li>
-                                                <li class="font-12 text-white text-uppercase">Feb</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="entry-content p-15 pt-10 pb-10">
-                                        <div class="entry-meta media no-bg no-border mt-0 mb-10">
-                                            <div class="media-body pl-0">
-                                                <div class="event-content pull-left flip">
-                                                    <h4 class="entry-title text-white text-uppercase font-weight-600 m-0 mt-5"><a href="blog-single-left-sidebar.html">Post title here</a></h4>
-                                                    <span class="mb-10 text-gray-darkgray mr-10 font-13"><i class="fa fa-commenting-o mr-5 text-theme-colored"></i> 214 Comments</span>
-                                                    <span class="mb-10 text-gray-darkgray mr-10 font-13"><i class="fa fa-heart-o mr-5 text-theme-colored"></i> 895 Likes</span>
+                            @foreach($blog as $singleBlog)
+                                @foreach($singleBlog->description as $description)
+                                    @if($description->language->label == LaravelLocalization::getCurrentLocale())
+                                        <div class="item">
+                                            <article class="post clearfix bg-white">
+                                                <div class="entry-header">
+                                                    <div class="post-thumb thumb">
+                                                        <img src="{{asset('uploads/blogs/540x370/'.$singleBlog->image_url)}}" alt="" class="img-responsive img-fullwidth">
+                                                    </div>
+                                                    <div class="entry-date media-left text-center flip bg-theme-colored pt-5 pr-15 pb-5 pl-15">
+                                                        <ul>
+                                                            <li class="font-16 text-white font-weight-600">{{ date('d' , strtotime($singleBlog->created_at)) }}</li>
+                                                            <li class="font-12 text-white text-uppercase">{{ date('F' , strtotime($singleBlog->created_at)) }}</li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <p class="mt-5">Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero dolor nobis deleniti<a class="text-theme-color-2 font-12 ml-5" href="blog-single-left-sidebar.html"> View Details</a></p>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="item">
-                                <article class="post clearfix bg-white">
-                                    <div class="entry-header">
-                                        <div class="post-thumb thumb">
-                                            <img src="http://placehold.it/540x370" alt="" class="img-responsive img-fullwidth">
-                                        </div>
-                                        <div class="entry-date media-left text-center flip bg-theme-colored pt-5 pr-15 pb-5 pl-15">
-                                            <ul>
-                                                <li class="font-16 text-white font-weight-600">28</li>
-                                                <li class="font-12 text-white text-uppercase">Feb</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="entry-content p-15 pt-10 pb-10">
-                                        <div class="entry-meta media no-bg no-border mt-0 mb-10">
-                                            <div class="media-body pl-0">
-                                                <div class="event-content pull-left flip">
-                                                    <h4 class="entry-title text-white text-uppercase font-weight-600 m-0 mt-5"><a href="#">Post title here</a></h4>
-                                                    <span class="mb-10 text-gray-darkgray mr-10 font-13"><i class="fa fa-commenting-o mr-5 text-theme-colored"></i> 214 Comments</span>
-                                                    <span class="mb-10 text-gray-darkgray mr-10 font-13"><i class="fa fa-heart-o mr-5 text-theme-colored"></i> 895 Likes</span>
+                                                <div class="entry-content p-15 pt-10 pb-10">
+                                                    <div class="entry-meta media no-bg no-border mt-0 mb-10">
+                                                        <div class="media-body pl-0">
+                                                            <div class="event-content pull-left flip">
+                                                                <h4 class="entry-title text-white text-uppercase font-weight-600 m-0 mt-5"><a href="{{route('blog.details',$singleBlog->id)}}">{{$description->title}}</a></h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <p class="mt-5">{!!  str_limit(strip_tags(html_entity_decode($description->description)),100)!!} <a class="text-theme-color-2 font-12 ml-5" href="{{route('blog.details',$singleBlog->id)}}"> View Details</a></p>
                                                 </div>
-                                            </div>
+                                            </article>
                                         </div>
-                                        <p class="mt-5">Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero dolor nobis deleniti<a class="text-theme-color-2 font-12 ml-5" href="#"> View Details</a></p>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="item">
-                                <article class="post clearfix bg-white">
-                                    <div class="entry-header">
-                                        <div class="post-thumb thumb">
-                                            <img src="http://placehold.it/540x370" alt="" class="img-responsive img-fullwidth">
-                                        </div>
-                                        <div class="entry-date media-left text-center flip bg-theme-colored pt-5 pr-15 pb-5 pl-15">
-                                            <ul>
-                                                <li class="font-16 text-white font-weight-600">28</li>
-                                                <li class="font-12 text-white text-uppercase">Feb</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="entry-content p-15 pt-10 pb-10">
-                                        <div class="entry-meta media no-bg no-border mt-0 mb-10">
-                                            <div class="media-body pl-0">
-                                                <div class="event-content pull-left flip">
-                                                    <h4 class="entry-title text-white text-uppercase font-weight-600 m-0 mt-5"><a href="blog-single-left-sidebar.html">Post title here</a></h4>
-                                                    <span class="mb-10 text-gray-darkgray mr-10 font-13"><i class="fa fa-commenting-o mr-5 text-theme-colored"></i> 214 Comments</span>
-                                                    <span class="mb-10 text-gray-darkgray mr-10 font-13"><i class="fa fa-heart-o mr-5 text-theme-colored"></i> 895 Likes</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="mt-5">Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero dolor nobis deleniti<a class="text-theme-color-2 font-12 ml-5" href="blog-single-left-sidebar.html"> View Details</a></p>
-                                    </div>
-                                </article>
-                            </div>
+                                    @endif
+                                @endforeach
+                            @endforeach
+
                         </div>
                     </div>
                 </div>
@@ -900,5 +750,6 @@
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
     {{--<script src="../assets/pages/scripts/portfolio-1.min.js" type="text/javascript"></script>--}}
     <script src="{{asset('admin-panel/'.LaravelLocalization::getCurrentLocale().'/assets/pages/scripts/portfolio-1.min.js')}}" type="text/javascript"></script>
+
 @endsection
 
