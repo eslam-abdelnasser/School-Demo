@@ -1,6 +1,6 @@
 @extends('front.layout')
 
-@section('title','الرئيسية')
+@section('title',trans('front.supervisor'))
 
 
 
@@ -14,11 +14,11 @@
             <div class="section-content">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h3 class="font-28">About us</h3></h2>
+                        <h3 class="font-28">{{trans('front.supervisor')}}</h3></h2>
                         <ol class="breadcrumb text-center text-black mt-10">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About us</a></li>
-                            <li class="active text-theme-colored">Page Title</li>
+                            <li><a href="#">{{trans('front.home')}}</a></li>
+                            <li><a href="{{route('supervisor')}}">{{trans('front.supervisor')}}</a></li>
+                            <li class="active text-theme-colored">{{trans('front.supervisor')}}</li>
                         </ol>
                     </div>
                 </div>

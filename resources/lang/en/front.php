@@ -31,6 +31,9 @@ return [
     'activities' =>'Activities',
     'teachers' => 'Teachers',
     'apply_now' => 'Apply Now',
+    'education_level' => 'Education Level',
+    'admission_role' => 'Admission Role',
+    'supervisor' => 'Supervisor'
 
 
 

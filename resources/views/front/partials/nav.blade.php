@@ -57,35 +57,35 @@
                     {{--<div id="side-panel-trigger" class="side-panel-trigger"><a href="#"><i class="fa fa-bars font-24 text-gray"></i></a></div>--}}
                     <ul class="menuzord-menu">
 
-                        <li class="  "><a href='{{ url("/" , LaravelLocalization::setLocale()) }}'>Home</a>
+                        <li class="  "><a href='{{ url("/" , LaravelLocalization::setLocale()) }}'>{{trans('front.home')}}</a>
 
                         </li>
 
-                        <li><a href='#'>About us</a>
+                        <li><a href='#'>{{trans('front.about_us')}}</a>
 
                             <ul class="dropdown">
-                                <li><a href="{{route('about-us')}}">About</a></li>
-                                <li><a href='{{route('services')}}'>Services</a></li>
-                                <li><a href="{{route('education-level')}}">Education level</a></li>
-                                <li><a href="{{route('supervisor')}}">Supervisor</a></li>
-                                <li><a href="{{route('admission-roles')}}">Admission roles</a></li>
+                                <li><a href='{{route("about-us")}}'>{{trans('front.about_us')}}</a></li>
+                                <li><a href='{{route('services')}}'>{{trans('front.services')}}</a></li>
+                                <li><a href="{{route('education-level')}}">{{trans('front.education_level')}}</a></li>
+                                <li><a href="{{route('supervisor')}}">{{trans('front.supervisor')}}</a></li>
+                                <li><a href="{{route('admission-roles')}}">{{trans('front.admission_role')}}</a></li>
                             </ul>
 
                         </li>
 
-                        <li><a href='{{route('blog')}}'>Blog</a></li>
+                        <li><a href='{{route('blog')}}'>{{trans('front.blog')}}</a></li>
 
-                        <li><a href='{{route('laboratories')}}'>laboratories</a></li>
+                        <li><a href='{{route('laboratories')}}'>{{trans('front.laboratory')}}</a></li>
 
-                        <li><a href='{{route('teachers')}}'>Teachers</a></li>
+                        <li><a href='{{route('teachers')}}'>{{trans('front.teachers')}}</a></li>
 
-                        <li><a href='{{route('news')}}'>News</a></li>
-                        <li><a href='{{route('activities')}}'>Our activities</a></li>
-                        <li><a href='{{route('media')}}'>Media</a></li>
+                        <li><a href='{{route('news')}}'>{{trans('front.news')}}</a></li>
+                        <li><a href='{{route('activities')}}'>{{trans('front.activities')}}</a></li>
+                        <li><a href='{{route('media')}}'>{{trans('front.media')}}</a></li>
 
 
-                        <li><a href='{{route('careers')}}'>Careers</a></li>
-                        <li><a href='{{route('contact-us')}}'>Contact us</a></li>
+                        <li><a href='{{route('careers')}}'>{{trans('front.careers')}}</a></li>
+                        <li><a href='{{route('contact-us')}}'>{{trans('front.contact_us')}}</a></li>
 
                     </ul>
                 </nav>

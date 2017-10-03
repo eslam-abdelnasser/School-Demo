@@ -30,6 +30,10 @@ return [
 
     'teachers' => 'المدرسين',
     'apply_now' => 'قدم الان',
+    'education_level' => 'مستوى التعليم',
+    'admission_role' => 'صلاحيات المستخدم',
+    'supervisor' => 'المشرفين'
+
 
 
 
