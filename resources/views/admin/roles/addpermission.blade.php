@@ -20,7 +20,7 @@
 
 @section('content')
     <h4 class="page-title">{{trans('admin/admins/permission.role_permission')}}</h4>
-
+<div class="row">
     {{Form::open(['route' => ['role_permission.store',$role_id] , 'method' => 'post']) }}
         <div class="form-group">
             <div class="col-md-12">
@@ -43,6 +43,7 @@
             </div>
         </div>
     {!! Form::close() !!}
+</div>
 @endsection
 
 

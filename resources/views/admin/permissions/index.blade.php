@@ -74,6 +74,7 @@
         <div class="text-center">
             <strong>Page : {{ $permissions->currentPage() }} of {{ $permissions->lastPage() }}</strong>
         </div>
+    </div>
 @endsection
 
 
